@@ -1,0 +1,257 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\listitemcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\listitemcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\listitemcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\listitemcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\cartcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\cartcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\cartcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\cartcus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\classes\\databaseprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\classes\\databaseprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\paymentfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\paymentfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|c:\\users\\admin\\documents\\laptrinhtrucquan\\btl_lttq\\btl_csharp\\csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\editnumberitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\editnumberitems.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\receiptcuscus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\receiptcuscus.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\addedititemfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\addedititemfrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\homefrm.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewcustomer\\cartcus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewcustomer\\cartcus.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\homefrm.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CartCus.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "ViewState": "AgIAAK4AAAAAAAAAAAAwwN8AAABRAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T07:42:04.666Z",
+              "IsPinned": true,
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CartCus.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T07:40:06.283Z",
+              "IsPinned": true,
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ListItemCus.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "ViewState": "AgIAALcAAAAAAAAAAAAAAMQAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T07:41:54.978Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ListItemCus.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T07:57:50.663Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "DataBaseProcess.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADMAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T11:15:55.911Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PaymentFrm.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\PaymentFrm.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\PaymentFrm.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\PaymentFrm.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\PaymentFrm.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAApwHkAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T11:45:01.711Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "SignIn.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Sign\\SignIn.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Sign\\SignIn.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Sign\\SignIn.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\Sign\\SignIn.cs",
+              "ViewState": "AgIAAB0AAAAAAAAAAAAQwAsAAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T07:57:16.127Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "EditNumberItems.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T07:57:08.44Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ReceiptCusCus.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T07:56:50.781Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "HomeFrm.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\HomeFrm.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\HomeFrm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T12:02:21.438Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AddEditItemFrm.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\AddEditItemFrm.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\AddEditItemFrm.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\AddEditItemFrm.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\AddEditItemFrm.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAgwI0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-17T11:03:19.919Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "HomeFrm.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\HomeFrm.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\HomeFrm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T12:03:47.182Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "HomeFrm.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.Designer.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\HomeFrm.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.Designer.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\HomeFrm.Designer.cs",
+              "ViewState": "AgIAAKsGAAAAAAAAAAAuwPkGAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T07:57:18.273Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartCus.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAMwAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T07:41:25.366Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
