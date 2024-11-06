@@ -1,4 +1,5 @@
 ﻿using CSharpCounterFinalProject.ViewCustomer;
+using CSharpCounterFinalProject.ViewNguoiMua;
 using System;
 using System.Data;
 using System.Windows.Forms;
@@ -44,13 +45,15 @@ namespace CSharpCounterFinalProject.Sign
                 DataTable dataTable = new DataTable();
                 string sql = "SELECT * FROM customer WHERE userName = N'" + username + "' AND passWord = N'" + password + "'";
                 dataTable = dtBase.DataReader(sql);
+                string name = dataTable.Rows[0]["FullName"].ToString();
                 if (dataTable.Rows.Count > 0)
                 {
                     MessageBox.Show("Đăng nhập thành công!");
-                    //var childView = new CustomerView(username, password);
-                    var childView = new HomeCustomerView(username);
-                    childView.Name = username;
-                    childView.Show();
+                    
+                    HomeView home = new HomeView(name);
+                    this.Hide();
+                    home.ShowDialog();
+                    
                 }
                 else
                 {

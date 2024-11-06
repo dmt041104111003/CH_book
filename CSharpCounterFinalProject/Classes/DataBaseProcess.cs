@@ -58,5 +58,7 @@ namespace CSharpCounterFinalProject.Classes
             sqlComma.ExecuteNonQuery();
             CloseConnect();
         }
+
+
     }
 }

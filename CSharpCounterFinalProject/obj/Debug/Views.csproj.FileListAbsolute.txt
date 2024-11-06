@@ -161,3 +161,5 @@ C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinal
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\bin\Debug\CSharpCounterFinalProject.pdb
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\bin\Debug\Interop.WMPLib.dll
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\bin\Debug\AxInterop.WMPLib.dll
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewNguoiMua.HomeView.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewNguoiMua.ChiTietSanPhamView.resources

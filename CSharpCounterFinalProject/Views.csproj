@@ -159,6 +159,18 @@
     <Compile Include="ViewCustomer\ReceiptCusCus.Designer.cs">
       <DependentUpon>ReceiptCusCus.cs</DependentUpon>
     </Compile>
+    <Compile Include="ViewNguoiMua\ChiTietSanPhamView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\ChiTietSanPhamView.Designer.cs">
+      <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HomeView.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewNguoiMua\HomeView.Designer.cs">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="AddEditBillFrm.resx">
       <DependentUpon>AddEditBillFrm.cs</DependentUpon>
     </EmbeddedResource>
@@ -215,6 +227,12 @@
     <EmbeddedResource Include="ViewCustomer\ReceiptCusCus.resx">
       <DependentUpon>ReceiptCusCus.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\ChiTietSanPhamView.resx">
+      <DependentUpon>ChiTietSanPhamView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewNguoiMua\HomeView.resx">
+      <DependentUpon>HomeView.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="bin\Debug\CSharpCounterFinalProject.exe.config" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -238,6 +256,15 @@
   <ItemGroup>
     <None Include="Images\setting.png" />
     <None Include="Images\action.png" />
+    <Content Include="bin\Debug\AnhSP\banhbao.jpg" />
+    <Content Include="bin\Debug\AnhSP\banhmi.jpg" />
+    <Content Include="bin\Debug\AnhSP\caphe_sua.jpg" />
+    <Content Include="bin\Debug\AnhSP\nuoccam.jpg" />
+    <Content Include="bin\Debug\AnhSP\nuocngot.jpg" />
+    <Content Include="bin\Debug\AnhSP\nuocsuoi.jpg" />
+    <Content Include="bin\Debug\AnhSP\snack.jpg" />
+    <Content Include="bin\Debug\AnhSP\snack_tom.jpg" />
+    <Content Include="bin\Debug\AnhSP\trasua.jpg" />
     <Content Include="bin\Debug\CSharpCounterFinalProject.exe" />
     <Content Include="bin\Debug\CSharpCounterFinalProject.pdb" />
     <Content Include="bin\Debug\Items\cake1.jpg" />
