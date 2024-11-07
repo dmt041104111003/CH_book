@@ -41,10 +41,6 @@
             this.labelNhapTK = new System.Windows.Forms.Label();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.tableSanPhams = new System.Windows.Forms.TableLayoutPanel();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.giaVịToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.đồUốngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.mìToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -54,7 +50,6 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -107,14 +102,13 @@
             this.splitContainer2.Panel2.Controls.Add(this.labelNhapTK);
             this.splitContainer2.Panel2.Controls.Add(this.txtTimKiem);
             this.splitContainer2.Panel2.Controls.Add(this.tableSanPhams);
-            this.splitContainer2.Panel2.Controls.Add(this.menuStrip1);
             this.splitContainer2.Size = new System.Drawing.Size(1874, 1005);
             this.splitContainer2.SplitterDistance = 236;
             this.splitContainer2.TabIndex = 0;
             // 
             // button4
             // 
-            this.button4.Location = new System.Drawing.Point(3, 275);
+            this.button4.Location = new System.Drawing.Point(0, 275);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(233, 87);
             this.button4.TabIndex = 3;
@@ -123,7 +117,7 @@
             // 
             // btnKhuyenMai
             // 
-            this.btnKhuyenMai.Location = new System.Drawing.Point(3, 192);
+            this.btnKhuyenMai.Location = new System.Drawing.Point(0, 192);
             this.btnKhuyenMai.Name = "btnKhuyenMai";
             this.btnKhuyenMai.Size = new System.Drawing.Size(233, 77);
             this.btnKhuyenMai.TabIndex = 2;
@@ -138,6 +132,7 @@
             this.btnGioHang.TabIndex = 1;
             this.btnGioHang.Text = "GIỎ HÀNG";
             this.btnGioHang.UseVisualStyleBackColor = true;
+            this.btnGioHang.Click += new System.EventHandler(this.btnGioHang_Click);
             // 
             // btnSanPham
             // 
@@ -151,7 +146,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(45, 149);
+            this.label3.Location = new System.Drawing.Point(179, 149);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(166, 29);
             this.label3.TabIndex = 7;
@@ -165,7 +160,7 @@
             "Tìm kiếm theo phân loại hàng",
             "Tìm kiếm theo hãng sản xuất",
             "Tìm kiếm theo a-z"});
-            this.cbTimKiemTheo.Location = new System.Drawing.Point(313, 149);
+            this.cbTimKiemTheo.Location = new System.Drawing.Point(447, 149);
             this.cbTimKiemTheo.Name = "cbTimKiemTheo";
             this.cbTimKiemTheo.Size = new System.Drawing.Size(796, 37);
             this.cbTimKiemTheo.TabIndex = 6;
@@ -173,7 +168,7 @@
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(1153, 80);
+            this.btnTimKiem.Location = new System.Drawing.Point(1331, 80);
             this.btnTimKiem.Name = "btnTimKiem";
             this.btnTimKiem.Size = new System.Drawing.Size(189, 50);
             this.btnTimKiem.TabIndex = 5;
@@ -184,7 +179,7 @@
             // labelNhapTK
             // 
             this.labelNhapTK.AutoSize = true;
-            this.labelNhapTK.Location = new System.Drawing.Point(45, 89);
+            this.labelNhapTK.Location = new System.Drawing.Point(179, 89);
             this.labelNhapTK.Name = "labelNhapTK";
             this.labelNhapTK.Size = new System.Drawing.Size(220, 29);
             this.labelNhapTK.TabIndex = 4;
@@ -192,7 +187,7 @@
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(313, 86);
+            this.txtTimKiem.Location = new System.Drawing.Point(447, 86);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.Size = new System.Drawing.Size(796, 35);
             this.txtTimKiem.TabIndex = 3;
@@ -214,38 +209,6 @@
             this.tableSanPhams.Size = new System.Drawing.Size(805, 1200);
             this.tableSanPhams.TabIndex = 2;
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
-            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(36, 36);
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.giaVịToolStripMenuItem,
-            this.đồUốngToolStripMenuItem,
-            this.mìToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1596, 54);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // giaVịToolStripMenuItem
-            // 
-            this.giaVịToolStripMenuItem.Name = "giaVịToolStripMenuItem";
-            this.giaVịToolStripMenuItem.Size = new System.Drawing.Size(106, 46);
-            this.giaVịToolStripMenuItem.Text = "Gia vị";
-            // 
-            // đồUốngToolStripMenuItem
-            // 
-            this.đồUốngToolStripMenuItem.Name = "đồUốngToolStripMenuItem";
-            this.đồUốngToolStripMenuItem.Size = new System.Drawing.Size(143, 46);
-            this.đồUốngToolStripMenuItem.Text = "Đồ uống";
-            // 
-            // mìToolStripMenuItem
-            // 
-            this.mìToolStripMenuItem.Name = "mìToolStripMenuItem";
-            this.mìToolStripMenuItem.Size = new System.Drawing.Size(70, 46);
-            this.mìToolStripMenuItem.Text = "Mì";
-            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -265,8 +228,6 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -281,10 +242,6 @@
         private System.Windows.Forms.Button btnKhuyenMai;
         private System.Windows.Forms.Button btnGioHang;
         private System.Windows.Forms.TableLayoutPanel tableSanPhams;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem giaVịToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem đồUốngToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mìToolStripMenuItem;
         private System.Windows.Forms.TextBox txtTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.Label labelNhapTK;

@@ -60,7 +60,7 @@ namespace CSharpCounterFinalProject.Sign
                     MessageBox.Show("Thông tin đăng nhập sai!");
                     return;
                 }
-            }
+            }  
         }
 
         private void BtnSignUpClick(object sender, EventArgs e)

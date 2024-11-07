@@ -383,5 +383,11 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
 
             }
         }
+
+        private void btnGioHang_Click(object sender, EventArgs e)
+        {
+            GioHangView gioHangView = new GioHangView();
+            gioHangView.Show();
+        }
     }
 }
