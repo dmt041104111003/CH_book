@@ -164,6 +164,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         {
             //show ra màn hình cụ thể để thêm sp vào giỏ hàng
             ChiTietSanPhamView chitietsp = new ChiTietSanPhamView(label1Text, label2Text,anh,masp);
+            this.Close();
             chitietsp.ShowDialog();
 
         }

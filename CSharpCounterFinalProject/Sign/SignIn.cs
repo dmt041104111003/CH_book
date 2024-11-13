@@ -1,4 +1,5 @@
-﻿using CSharpCounterFinalProject.ViewCustomer;
+﻿using CSharpCounterFinalProject.Classes;
+using CSharpCounterFinalProject.ViewCustomer;
 using CSharpCounterFinalProject.ViewNguoiMua;
 using System;
 using System.Data;
@@ -25,42 +26,60 @@ namespace CSharpCounterFinalProject.Sign
         {
             string username = txtName.Text;
             string password = txtPassword.Text;
-            if(username == "admin" && password == "admin")
+            if(username==""|| password == "")
             {
-                try
-                {
-                    string sql = "SELECT * FROM customer WHERE userName = N'" + username + "' AND passWord = N'" + password + "'";
-                    dtBase.DataReader(sql);
-                    MessageBox.Show("Đăng nhập thành công!");
-                    var childView = new HomeFrm();
-                    childView.Name = username;
-                    childView.Show();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Thông tin đăng nhập sai!");
-                }
-            }else
+                MessageBox.Show("Không được để trống","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
+            
+            bool isNguoiDung = checkNguoiDung(username, password);
+            bool isNhanVien = checkNhanVien(username, password);
+            if (isNhanVien)
             {
-                DataTable dataTable = new DataTable();
-                string sql = "SELECT * FROM customer WHERE userName = N'" + username + "' AND passWord = N'" + password + "'";
-                dataTable = dtBase.DataReader(sql);
-                string name = dataTable.Rows[0]["FullName"].ToString();
-                if (dataTable.Rows.Count > 0)
-                {
-                    MessageBox.Show("Đăng nhập thành công!");
-                    
-                    HomeView home = new HomeView(name);
-                    this.Hide();
-                    home.ShowDialog();
-                    
-                }
-                else
-                {
-                    MessageBox.Show("Thông tin đăng nhập sai!");
-                    return;
-                }
-            }  
+                MessageBox.Show("Đăng nhập thành công!");
+                var childView = new HomeFrm();
+                childView.Name = username;
+                childView.Show();
+            }else if (isNguoiDung)
+            {
+                MessageBox.Show("Đăng nhập thành công!");
+
+                HomeView home = new HomeView(Program.currentUser.TenUser);
+                this.Hide();
+                home.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Thông tin đăng nhập sai!");
+                return;
+            }
+        }
+
+        private bool checkNhanVien(string username, string password)
+        {
+            bool check = false;
+            string query = "select * from NhanVien where MaNV = '" + username + "' and MatKhau ='" + password + "'";
+            DataTable dt = new DataTable();
+            dt = dtBase.DataReader(query);
+            if(dt.Rows.Count > 0)
+            {
+                check = true;
+                
+            }
+            return check;
+        }
+
+        private bool checkNguoiDung(string username, string password)
+        {
+            bool check = false;
+            string query = "select * from NguoiDung where MaNguoiDung = '" + username + "' and MatKhau ='" + password + "'";
+            DataTable dt = new DataTable();
+            dt = dtBase.DataReader(query);
+            if (dt.Rows.Count > 0)
+            {
+                check = true;
+                Program.currentUser.TenUser = dt.Rows[0]["TenNguoiDung"].ToString();
+            }
+            return check;
         }
 
         private void BtnSignUpClick(object sender, EventArgs e)

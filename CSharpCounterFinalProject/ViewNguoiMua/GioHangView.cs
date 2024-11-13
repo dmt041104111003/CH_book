@@ -237,5 +237,11 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         {
 
         }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            HomeView mainFrm = new HomeView(Program.currentUser.TenUser);
+        }
     }
 }

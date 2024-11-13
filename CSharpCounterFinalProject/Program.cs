@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CSharpCounterFinalProject.Classes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -8,16 +9,15 @@ namespace CSharpCounterFinalProject
 {
     internal static class Program
     {
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
+
+        public static UserInfo currentUser = new UserInfo();
         [STAThread]
         static void Main()
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Sign.SignIn());
-            //Application.Run(new HomeFrm());
+
         }
     }
 }

@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|c:\\users\\admin\\documents\\laptrinhtrucquan\\btl_lttq\\btl_csharp\\csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|c:\\users\\admin\\documents\\laptrinhtrucquan\\btl_lttq\\btl_csharp\\csharpcounterfinalproject\\viewnguoimua\\chitietsanphamview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\chitietsanphamview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\giohangview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|c:\\users\\admin\\documents\\laptrinhtrucquan\\btl_lttq\\btl_csharp\\csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\classes\\databaseprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\classes\\databaseprocess.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\sign\\signin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\classes\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\classes\\item.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|solutionrelative:csharpcounterfinalproject\\viewnguoimua\\homeview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DFE2DA0B-E1C7-4CCD-8A0A-7CA414BECF1D}|CSharpCounterFinalProject\\Views.csproj|C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\csharpcounterfinalproject\\viewnguoimua\\chitietsanphamview.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -86,7 +98,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
@@ -96,24 +108,36 @@
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs",
               "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs",
-              "ViewState": "AgIAAB0AAAAAAAAAAAAIwB8BAAA1AAAAAAAAAA==",
+              "ViewState": "AgIAAFAAAAAAAAAAAAA5wBcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-06T12:40:22.631Z",
-              "IsPinned": true,
-              "EditorCaption": ""
+              "IsPinned": true
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "GioHangView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs [Design]*",
-              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs [Design]*",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs [Design]",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T10:20:33.275Z",
               "IsPinned": true,
               "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ChiTietSanPhamView.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs*",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs*",
+              "ViewState": "AgIAAA0AAAAAAAAAAAA5wCAAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T10:12:38.621Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Bookmark",
@@ -133,24 +157,11 @@
               "Title": "GioHangView.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs*",
-              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs*",
-              "ViewState": "AgIAAAkAAAAAAAAAAAArwBkAAAAxAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\GioHangView.cs",
+              "ViewState": "AgIAACwAAAAAAAAAAAA0wPMAAABHAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-07T09:15:33.555Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "DataBaseProcess.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
-              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
-              "RelativeToolTip": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAaAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-25T11:15:55.911Z",
               "EditorCaption": ""
             },
             {
@@ -161,7 +172,7 @@
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Sign\\SignIn.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Sign\\SignIn.cs",
               "RelativeToolTip": "CSharpCounterFinalProject\\Sign\\SignIn.cs",
-              "ViewState": "AgIAABYAAAAAAAAAAAAowCwAAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAowCcAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-25T07:57:16.127Z",
               "EditorCaption": ""
@@ -169,29 +180,65 @@
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "DataBaseProcess.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\Classes\\DataBaseProcess.cs",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAIwCUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-25T11:15:55.911Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Program.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Program.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Program.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:39:06.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Item.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\Item.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Classes\\Item.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Classes\\Item.cs",
+              "RelativeToolTip": "CSharpCounterFinalProject\\Classes\\Item.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-12T15:30:03.625Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "HomeView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs [Design]",
               "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\HomeView.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T11:21:26.734Z",
+              "WhenOpened": "2024-11-06T11:21:26.734Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ChiTietSanPhamView.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
+              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
+              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs [Design]*",
+              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs [Design]*",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-06T17:23:19.52Z",
               "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ChiTietSanPhamView.cs [Design]",
-              "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
-              "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs",
-              "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs [Design]",
-              "RelativeToolTip": "CSharpCounterFinalProject\\ViewNguoiMua\\ChiTietSanPhamView.cs [Design]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T17:23:19.52Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 10,
               "Title": "HomeFrm.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.Designer.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\HomeFrm.Designer.cs",
@@ -203,7 +250,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 11,
               "Title": "AddEditItemFrm.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\AddEditItemFrm.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\AddEditItemFrm.cs",
@@ -214,19 +261,18 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 12,
               "Title": "SignIn.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Sign\\SignIn.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\Sign\\SignIn.cs",
               "ToolTip": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\Sign\\SignIn.cs [Design]",
               "RelativeToolTip": "CSharpCounterFinalProject\\Sign\\SignIn.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-06T13:06:11.738Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-11-06T13:06:11.738Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 13,
               "Title": "HomeCustomerView.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\HomeCustomerView.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\HomeCustomerView.cs",
@@ -237,7 +283,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 14,
               "Title": "ListItemCus.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
@@ -249,7 +295,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 15,
               "Title": "ListItemCus.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ListItemCus.cs",
@@ -260,7 +306,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 16,
               "Title": "PaymentFrm.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\PaymentFrm.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\PaymentFrm.cs",
@@ -272,7 +318,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 17,
               "Title": "EditNumberItems.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\EditNumberItems.cs",
@@ -283,7 +329,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 18,
               "Title": "ReceiptCusCus.cs [Design]",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\ReceiptCusCus.cs",
@@ -294,7 +340,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 19,
               "Title": "AddEditItemFrm.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\AddEditItemFrm.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\AddEditItemFrm.cs",
@@ -306,7 +352,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 20,
               "Title": "HomeFrm.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\HomeFrm.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\HomeFrm.cs",
@@ -318,7 +364,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 21,
               "Title": "CartCus.Designer.cs",
               "DocumentMoniker": "C:\\Users\\Admin\\Documents\\LapTrinhTrucQuan\\BTL_LTTQ\\BTL_CSharp\\CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",
               "RelativeDocumentMoniker": "CSharpCounterFinalProject\\ViewCustomer\\CartCus.Designer.cs",

@@ -30,7 +30,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 MessageBox.Show("ERRORs", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             DataRow dataRow = dt.Rows[0];
-            string hangsx = dataRow["Hang"].ToString();
+            string hangsx = dataRow["HangSX"].ToString();
             string phanloai = dataRow["PhanLoai"].ToString();
             string mota = dataRow["MoTa"].ToString();
             string tonkho = dataRow["TonKho"].ToString();

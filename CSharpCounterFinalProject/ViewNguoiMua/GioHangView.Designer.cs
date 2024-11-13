@@ -31,20 +31,20 @@
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.label2 = new System.Windows.Forms.Label();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.button3 = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
-            this.btnThanhtoan = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableSanPhams = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtTongSoSP = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.txtTongSoSP = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnThanhtoan = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btnQuayLai = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -111,42 +111,6 @@
             this.splitContainer2.TabIndex = 1;
             this.splitContainer2.SplitterMoved += new System.Windows.Forms.SplitterEventHandler(this.splitContainer2_SplitterMoved);
             // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(823, 34);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(158, 69);
-            this.button3.TabIndex = 3;
-            this.button3.Text = "button3";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.Location = new System.Drawing.Point(320, 34);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(158, 69);
-            this.btnQuayLai.TabIndex = 1;
-            this.btnQuayLai.Text = "Quay lại";
-            this.btnQuayLai.UseVisualStyleBackColor = true;
-            // 
-            // btnThanhtoan
-            // 
-            this.btnThanhtoan.Location = new System.Drawing.Point(540, 34);
-            this.btnThanhtoan.Name = "btnThanhtoan";
-            this.btnThanhtoan.Size = new System.Drawing.Size(234, 69);
-            this.btnThanhtoan.TabIndex = 2;
-            this.btnThanhtoan.Text = "Thanh toán";
-            this.btnThanhtoan.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(695, 110);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(79, 29);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "label1";
-            // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
@@ -199,37 +163,15 @@
             this.splitContainer3.SplitterDistance = 202;
             this.splitContainer3.TabIndex = 0;
             // 
-            // label3
+            // label6
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(24, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 29);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Tổng số sản phẩm";
-            // 
-            // txtTongSoSP
-            // 
-            this.txtTongSoSP.Location = new System.Drawing.Point(271, 43);
-            this.txtTongSoSP.Name = "txtTongSoSP";
-            this.txtTongSoSP.Size = new System.Drawing.Size(96, 35);
-            this.txtTongSoSP.TabIndex = 1;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(271, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 35);
-            this.textBox1.TabIndex = 3;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(24, 89);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(206, 29);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "Tổng số mặt hàng";
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(973, 55);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(66, 29);
+            this.label6.TabIndex = 6;
+            this.label6.Text = "VND";
             // 
             // textBox2
             // 
@@ -247,15 +189,74 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Tổng số tiền";
             // 
-            // label6
+            // textBox1
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(973, 55);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(66, 29);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "VND";
+            this.textBox1.Location = new System.Drawing.Point(271, 89);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(96, 35);
+            this.textBox1.TabIndex = 3;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(24, 89);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(206, 29);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "Tổng số mặt hàng";
+            // 
+            // txtTongSoSP
+            // 
+            this.txtTongSoSP.Location = new System.Drawing.Point(271, 43);
+            this.txtTongSoSP.Name = "txtTongSoSP";
+            this.txtTongSoSP.Size = new System.Drawing.Size(96, 35);
+            this.txtTongSoSP.TabIndex = 1;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(24, 43);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(212, 29);
+            this.label3.TabIndex = 0;
+            this.label3.Text = "Tổng số sản phẩm";
+            // 
+            // btnThanhtoan
+            // 
+            this.btnThanhtoan.Location = new System.Drawing.Point(540, 34);
+            this.btnThanhtoan.Name = "btnThanhtoan";
+            this.btnThanhtoan.Size = new System.Drawing.Size(234, 69);
+            this.btnThanhtoan.TabIndex = 2;
+            this.btnThanhtoan.Text = "Thanh toán";
+            this.btnThanhtoan.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(823, 34);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(158, 69);
+            this.button3.TabIndex = 3;
+            this.button3.Text = "button3";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Location = new System.Drawing.Point(320, 34);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(158, 69);
+            this.btnQuayLai.TabIndex = 1;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(695, 110);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(79, 29);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "label1";
             // 
             // GioHangView
             // 
