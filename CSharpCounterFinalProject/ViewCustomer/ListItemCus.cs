@@ -50,7 +50,7 @@ namespace CSharpCounterFinalProject.ViewCustomer
                             item.SelectedItem_ID = reader["SelectedItem_ID"].ToString();
                             item.NumberOfSelectedItem = (int)reader["NumberOfSelectedItem"];
                             item.Price = (int)reader["Price"];
-                          //  item.PriceAfterDiscount = reader.GetDecimal(reader.GetOrdinal("PriceAfterDiscount"));
+                            item.PriceAfterDiscount = reader.GetDecimal(reader.GetOrdinal("PriceAfterDiscount"));
                             item.Image = reader["Image"].ToString();
                             item.Itemname = reader["Itemname"].ToString();
                             item.TotalAmount = reader.GetDecimal(reader.GetOrdinal("TotalAmount"));
@@ -65,7 +65,7 @@ namespace CSharpCounterFinalProject.ViewCustomer
         public void ListItemCus_Load(object sender, EventArgs e)
         {
             shoppingCart = GetProductsFromDatabase();
-            UpdateTableLayoutPanel(shoppingCart); //hien ra danh sach san pham
+            UpdateTableLayoutPanel(shoppingCart);
 
             tableLayoutPanel.AutoScroll = true;
             // load id
@@ -198,26 +198,19 @@ namespace CSharpCounterFinalProject.ViewCustomer
 
         private void ProductPanel_Click(object sender, EventArgs e)
         {
-            // Kiểm tra xem sender có thực sự là TableLayoutPanel không
-            if (sender is TableLayoutPanel productPanel)
-            {
-                // Kiểm tra xem Tag của productPanel có phải là SelectedItem không
-                if (productPanel.Tag is SelectedItem product)
-                {
-                    var children = new EditNumberItems(product, this);
-                    children.Show();
-                }
-                else
-                {
-                    MessageBox.Show("Tag không chứa đối tượng SelectedItem", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
-                MessageBox.Show("Không thể chuyển đổi sender thành TableLayoutPanel", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
 
+
+            // Ép kiểu sender thành TableLayoutPanel để lấy dữ liệu từ bên trong
+            TableLayoutPanel productPanel = (TableLayoutPanel)sender;
+            SelectedItem product = (SelectedItem)productPanel.Tag;
+
+            var children = new EditNumberItems(product,this);
+            children.Show();
+
+
+            
+
+        }
 
         private void btbPaymentCus_Click_1(object sender, EventArgs e)
         {
@@ -226,10 +219,9 @@ namespace CSharpCounterFinalProject.ViewCustomer
             if (!string.IsNullOrEmpty(labelName.Text))
             {
                 // cart
-                //Insert vào CSDL : sửa thành lấy các selectedItem ra từ csdl để thanh toán
-                sql = "insert into Cart( TotalItem,TotalDiscountAmount, TotalAmount, Customer_ID, SelectedItem_ID) values( 2,2,100000,";
-                sql += "N'" + customer_id + "', 3)";
-
+                //Insert vào CSDL
+                sql = "INSERT INTO Cart (TotalItem, Customer_ID, SelectedItem_ID, TotalDiscountAmount, TotalAmount) VALUES (";
+                sql += "0 ,N'" + customer_id + "', 33, 0, 0)";
                 dtBase.DataChange(sql);
                 MessageBox.Show("Tạo thành công", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 var child = new PaymentFrm(customer_id, labelName.Text);
@@ -248,8 +240,9 @@ namespace CSharpCounterFinalProject.ViewCustomer
 
             // dtBase.DataReader là một đối tượng chưa kết nối và thực hiện truy vấn
 
-            string strConnect = "Data Source=DESKTOP-JSDGA71\\SQLEXPRESS;Initial Catalog=BTL_LTTQ;Integrated Security=True";
-
+            string strConnect = "Data Source=VanHai\\SQLEXPRESS;" +
+                            "DataBase=BTL_LTTQ;User ID=sa;" +
+                            "Password=123;Integrated Security=false";
             using (SqlConnection connection = new SqlConnection(strConnect)) // Kết nối cơ sở dữ liệu
             {
                 connection.Open();

@@ -10,7 +10,7 @@ namespace CSharpCounterFinalProject.Classes
 {
     public class DataBaseProcess
     {
-        public static string strConnect = "Data Source=DESKTOP-JSDGA71\\SQLEXPRESS;Initial Catalog=QLBH_LTTQ;Integrated Security=True";
+        public static string strConnect = "Data Source=DESKTOP-JSDGA71\\SQLEXPRESS;Initial Catalog=QLBanHang_LTTQ;Integrated Security=True";
 
         SqlConnection sqlConnect = null;
 

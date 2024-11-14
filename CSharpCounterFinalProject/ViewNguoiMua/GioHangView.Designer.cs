@@ -35,9 +35,9 @@
             this.tableSanPhams = new System.Windows.Forms.TableLayoutPanel();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtTongTien = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtTongSoMatHang = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtTongSoSP = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -45,6 +45,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.boxPTThanhToan = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -145,10 +147,12 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.BackColor = System.Drawing.Color.White;
+            this.splitContainer3.Panel1.Controls.Add(this.boxPTThanhToan);
+            this.splitContainer3.Panel1.Controls.Add(this.label7);
             this.splitContainer3.Panel1.Controls.Add(this.label6);
-            this.splitContainer3.Panel1.Controls.Add(this.textBox2);
+            this.splitContainer3.Panel1.Controls.Add(this.txtTongTien);
             this.splitContainer3.Panel1.Controls.Add(this.label5);
-            this.splitContainer3.Panel1.Controls.Add(this.textBox1);
+            this.splitContainer3.Panel1.Controls.Add(this.txtTongSoMatHang);
             this.splitContainer3.Panel1.Controls.Add(this.label4);
             this.splitContainer3.Panel1.Controls.Add(this.txtTongSoSP);
             this.splitContainer3.Panel1.Controls.Add(this.label3);
@@ -173,12 +177,12 @@
             this.label6.TabIndex = 6;
             this.label6.Text = "VND";
             // 
-            // textBox2
+            // txtTongTien
             // 
-            this.textBox2.Location = new System.Drawing.Point(725, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(231, 35);
-            this.textBox2.TabIndex = 5;
+            this.txtTongTien.Location = new System.Drawing.Point(725, 49);
+            this.txtTongTien.Name = "txtTongTien";
+            this.txtTongTien.Size = new System.Drawing.Size(231, 35);
+            this.txtTongTien.TabIndex = 5;
             // 
             // label5
             // 
@@ -189,12 +193,12 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Tổng số tiền";
             // 
-            // textBox1
+            // txtTongSoMatHang
             // 
-            this.textBox1.Location = new System.Drawing.Point(271, 89);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(96, 35);
-            this.textBox1.TabIndex = 3;
+            this.txtTongSoMatHang.Location = new System.Drawing.Point(271, 89);
+            this.txtTongSoMatHang.Name = "txtTongSoMatHang";
+            this.txtTongSoMatHang.Size = new System.Drawing.Size(96, 35);
+            this.txtTongSoMatHang.TabIndex = 3;
             // 
             // label4
             // 
@@ -258,6 +262,27 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(535, 97);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(262, 29);
+            this.label7.TabIndex = 7;
+            this.label7.Text = "Phương thức thanh toán";
+            // 
+            // boxPTThanhToan
+            // 
+            this.boxPTThanhToan.FormattingEnabled = true;
+            this.boxPTThanhToan.Items.AddRange(new object[] {
+            "Tiền mặt",
+            "Chuyển khoản",
+            "Quẹt thẻ"});
+            this.boxPTThanhToan.Location = new System.Drawing.Point(540, 129);
+            this.boxPTThanhToan.Name = "boxPTThanhToan";
+            this.boxPTThanhToan.Size = new System.Drawing.Size(416, 37);
+            this.boxPTThanhToan.TabIndex = 8;
+            // 
             // GioHangView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -300,11 +325,13 @@
         private System.Windows.Forms.TableLayoutPanel tableSanPhams;
         private System.Windows.Forms.SplitContainer splitContainer3;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTongTien;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtTongSoMatHang;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtTongSoSP;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.ComboBox boxPTThanhToan;
+        private System.Windows.Forms.Label label7;
     }
 }

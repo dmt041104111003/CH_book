@@ -14,12 +14,19 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
     public partial class ChiTietSanPhamView : Form
     {
         DataBaseProcess db = new DataBaseProcess();
-        public ChiTietSanPhamView(string label1Text, string label2Text, string anh, string masp)
+
+        //THONG TIN SAN PHAM
+        string tensp, gia, fileanh, masp;
+        public ChiTietSanPhamView(string label1Text, string label2Text, string anh, string masp2)
         {
             InitializeComponent();
-            labelTenSP.Text = label1Text;
-            labelGia.Text = label2Text + "VND";
-            string imagePath = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + anh;
+            tensp = label1Text;
+            gia = label2Text;
+            fileanh = anh;
+            masp = masp2;
+            labelTenSP.Text = tensp;
+            labelGia.Text = gia + "VND";
+            string imagePath = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + fileanh;
             boxAnhSP.Image = Image.FromFile(imagePath);
             boxAnhSP.SizeMode = PictureBoxSizeMode.Zoom; //anh vua van
             //tim kiem nhung cai khac qua masp
@@ -59,6 +66,21 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         private void button3_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if(soLuongUpDown.Value > 0 )
+            {
+                //them vao gio hang
+
+                MessageBox.Show($"Bạn đã thêm sản phẩm {tensp} với số lượng {soLuongUpDown.Value} vào giỏ hàng !\n Hãy kiểm tra giỏ hàng nhé !", "Thông báo", MessageBoxButtons.OK);
+
+            }
+            else
+            {
+                MessageBox.Show("Bạn chưa thay đổi số lượng sản phẩm!","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+            }
         }
     }
 }

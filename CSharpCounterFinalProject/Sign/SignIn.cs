@@ -1,5 +1,4 @@
 ﻿using CSharpCounterFinalProject.Classes;
-using CSharpCounterFinalProject.ViewCustomer;
 using CSharpCounterFinalProject.ViewNguoiMua;
 using System;
 using System.Data;
@@ -29,6 +28,7 @@ namespace CSharpCounterFinalProject.Sign
             if(username==""|| password == "")
             {
                 MessageBox.Show("Không được để trống","Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Warning);
+                return;
             }
             
             bool isNguoiDung = checkNguoiDung(username, password);
@@ -42,7 +42,6 @@ namespace CSharpCounterFinalProject.Sign
             }else if (isNguoiDung)
             {
                 MessageBox.Show("Đăng nhập thành công!");
-
                 HomeView home = new HomeView(Program.currentUser.TenUser);
                 this.Hide();
                 home.ShowDialog();
@@ -78,6 +77,7 @@ namespace CSharpCounterFinalProject.Sign
             {
                 check = true;
                 Program.currentUser.TenUser = dt.Rows[0]["TenNguoiDung"].ToString();
+                Program.currentUser.MaUser = dt.Rows[0]["MaNguoiDung"].ToString();
             }
             return check;
         }

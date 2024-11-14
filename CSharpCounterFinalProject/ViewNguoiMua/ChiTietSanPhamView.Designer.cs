@@ -42,12 +42,12 @@
             this.labelLoaiSP = new System.Windows.Forms.Label();
             this.labelHangSP = new System.Windows.Forms.Label();
             this.txtMoTaSP = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
+            this.btnThem = new System.Windows.Forms.Button();
+            this.btnMuaNgay = new System.Windows.Forms.Button();
+            this.btnQuayLai = new System.Windows.Forms.Button();
+            this.soLuongUpDown = new System.Windows.Forms.NumericUpDown();
             ((System.ComponentModel.ISupportInitialize)(this.boxAnhSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soLuongUpDown)).BeginInit();
             this.SuspendLayout();
             // 
             // boxAnhSP
@@ -176,50 +176,56 @@
             this.txtMoTaSP.Size = new System.Drawing.Size(730, 159);
             this.txtMoTaSP.TabIndex = 13;
             // 
-            // button1
+            // btnThem
             // 
-            this.button1.Location = new System.Drawing.Point(708, 641);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 77);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Thêm vào giỏ hàng";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnThem.Location = new System.Drawing.Point(708, 641);
+            this.btnThem.Name = "btnThem";
+            this.btnThem.Size = new System.Drawing.Size(250, 77);
+            this.btnThem.TabIndex = 14;
+            this.btnThem.Text = "Thêm vào giỏ hàng";
+            this.btnThem.UseVisualStyleBackColor = true;
+            this.btnThem.Click += new System.EventHandler(this.button1_Click);
             // 
-            // button2
+            // btnMuaNgay
             // 
-            this.button2.Location = new System.Drawing.Point(1012, 641);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 77);
-            this.button2.TabIndex = 15;
-            this.button2.Text = "Mua ngay";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnMuaNgay.Location = new System.Drawing.Point(1012, 641);
+            this.btnMuaNgay.Name = "btnMuaNgay";
+            this.btnMuaNgay.Size = new System.Drawing.Size(250, 77);
+            this.btnMuaNgay.TabIndex = 15;
+            this.btnMuaNgay.Text = "Mua ngay";
+            this.btnMuaNgay.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnQuayLai
             // 
-            this.button3.Location = new System.Drawing.Point(403, 641);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(250, 77);
-            this.button3.TabIndex = 16;
-            this.button3.Text = "Quay lại";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btnQuayLai.Location = new System.Drawing.Point(403, 641);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(250, 77);
+            this.btnQuayLai.TabIndex = 16;
+            this.btnQuayLai.Text = "Quay lại";
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.button3_Click);
             // 
-            // numericUpDown1
+            // soLuongUpDown
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(699, 365);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(120, 35);
-            this.numericUpDown1.TabIndex = 17;
+            this.soLuongUpDown.Location = new System.Drawing.Point(699, 365);
+            this.soLuongUpDown.Name = "soLuongUpDown";
+            this.soLuongUpDown.Size = new System.Drawing.Size(120, 35);
+            this.soLuongUpDown.TabIndex = 17;
+            this.soLuongUpDown.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // ChiTietSanPhamView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1503, 730);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.soLuongUpDown);
+            this.Controls.Add(this.btnQuayLai);
+            this.Controls.Add(this.btnMuaNgay);
+            this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtMoTaSP);
             this.Controls.Add(this.labelHangSP);
             this.Controls.Add(this.labelLoaiSP);
@@ -240,7 +246,7 @@
             this.Text = "ChiTietSanPhamView";
             this.Load += new System.EventHandler(this.ChiTietSanPhamView_Load);
             ((System.ComponentModel.ISupportInitialize)(this.boxAnhSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soLuongUpDown)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -262,9 +268,9 @@
         private System.Windows.Forms.Label labelLoaiSP;
         private System.Windows.Forms.Label labelHangSP;
         private System.Windows.Forms.TextBox txtMoTaSP;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
+        private System.Windows.Forms.Button btnThem;
+        private System.Windows.Forms.Button btnMuaNgay;
+        private System.Windows.Forms.Button btnQuayLai;
+        private System.Windows.Forms.NumericUpDown soLuongUpDown;
     }
 }

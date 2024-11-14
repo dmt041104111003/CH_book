@@ -11,6 +11,7 @@ namespace CSharpCounterFinalProject
     {
 
         public static UserInfo currentUser = new UserInfo();
+        public static DanhSachSanPham danhSachSP = new DanhSachSanPham();
         [STAThread]
         static void Main()
         {

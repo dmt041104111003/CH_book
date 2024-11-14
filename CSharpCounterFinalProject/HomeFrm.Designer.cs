@@ -1780,7 +1780,7 @@ namespace CSharpCounterFinalProject
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-         //   this.Name = "HomeFrm";
+            //this.Name = "HomeFrm";
             this.Text = "Quản Lý Bán Hàng";
             this.Load += new System.EventHandler(this.HomeFrm_Load);
             this.menuStrip1.ResumeLayout(false);

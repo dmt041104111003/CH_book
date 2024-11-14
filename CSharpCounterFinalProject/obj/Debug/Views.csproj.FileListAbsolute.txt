@@ -145,13 +145,6 @@ C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinal
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.Properties.Resources.resources
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.Sign.SignIn.resources
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.Sign.SignUp.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.CartCus.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.CustomerInformationView.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.DetailItemCus.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.EditNumberItems.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.HomeCustomerView.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.ListItemCus.resources
-C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.ReceiptCusCus.resources
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\Views.csproj.GenerateResource.cache
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\Views.csproj.CoreCompileInputs.cache
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.exe
@@ -164,3 +157,10 @@ C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinal
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewNguoiMua.HomeView.resources
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewNguoiMua.ChiTietSanPhamView.resources
 C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewNguoiMua.GioHangView.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.CartCus.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.CustomerInformationView.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.DetailItemCus.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.EditNumberItems.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.HomeCustomerView.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.ListItemCus.resources
+C:\Users\Admin\Documents\LapTrinhTrucQuan\BTL_LTTQ\BTL_CSharp\CSharpCounterFinalProject\obj\Debug\CSharpCounterFinalProject.ViewCustomer.ReceiptCusCus.resources

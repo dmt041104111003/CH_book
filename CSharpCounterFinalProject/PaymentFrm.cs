@@ -1,5 +1,4 @@
 ﻿using CSharpCounterFinalProject.Classes;
-using CSharpCounterFinalProject.ViewCustomer;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -91,8 +90,8 @@ namespace CSharpCounterFinalProject
                 dtBase.DataChange(sql1);
                 Close();
 
-                var child = new ReceiptCusCus(list);
-                child.Show();
+               // var child = new ReceiptCusCus(list);
+               // child.Show();
             }
         }
 

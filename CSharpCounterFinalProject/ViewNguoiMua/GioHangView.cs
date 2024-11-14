@@ -46,13 +46,14 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         {
             CenterToScreen();
             this.Size = new Size(600, 600);
+            boxPTThanhToan.SelectedItem = boxPTThanhToan.Items[0];
             DataTable dt = new DataTable();
-            string query = "select * from SanPham";
+            string query = "select * from giohang gh join GioSanPham gsp on gh.MaGH = gsp.MaGH\r\njoin SanPham sp on sp.MaSanPham = gsp.MaSanPham \r\nwhere gh.MaNguoiDung = '" + Program.currentUser.MaUser+"'";
             dt = db.DataReader(query);
             if(dt.Rows.Count > 0)
             {
-
-            HienThiSanPham(tableSanPhams,dt);
+                NhapDanhSachSP(dt);
+                HienThiSanPham(tableSanPhams);
             }
             else
             {
@@ -60,25 +61,49 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
             }
 
         }
+
+        private void NhapDanhSachSP(DataTable dt)
+        {
+            foreach (DataRow row in dt.Rows)
+            {
+                string tensp = row["TenSanPham"].ToString();
+                string masp = row["MaSanPham"].ToString();
+                string phanloai = row["PhanLoai"].ToString();
+                string hangsx = row["HangSX"].ToString();
+                string anh = row["Anh"].ToString();
+                int soLuong = Convert.ToInt32(row["SoLuong"]);
+                decimal giaCa = Convert.ToDecimal(row["GiaCa"]);
+                string mota = row["MoTa"].ToString();
+
+
+                SanPham item = new SanPham(masp, tensp, phanloai, hangsx, soLuong, giaCa, anh, mota);
+                Program.danhSachSP.ThemSanPham(item);
+            }
+        }
+
         // them sp vao tableSanPhams
-        private void HienThiSanPham(TableLayoutPanel tableSanPhams, DataTable dataTable)
+        private void HienThiSanPham(TableLayoutPanel tableSanPhams)
         {
             // 1 cot va nhieu hang
             tableSanPhams.ColumnCount = 1;
-            tableSanPhams.RowCount = dataTable.Rows.Count; //hang = so sp
+            tableSanPhams.RowCount = Program.danhSachSP.TongSoSP(); //hang = so sp
             tableSanPhams.AutoSize = true;
             tableSanPhams.Controls.Clear(); // Xóa các sản phẩm cũ nếu có
 
             // Cài đặt chế độ tự động điều chỉnh chiều cao hàng
             tableSanPhams.RowStyles.Clear();
-            foreach (DataRow row in dataTable.Rows)
+            for(int i = 0;i< Program.danhSachSP.TongSoSP();i++)
             {
                 tableSanPhams.RowStyles.Add(new RowStyle(SizeType.AutoSize));
             }
 
             // Lặp qua mỗi sản phẩm trong DataTable
-            foreach (DataRow row in dataTable.Rows)
+            //tong so
+            int tongSoLuong = 0;
+            decimal tong = 0;
+            for (int i = 0; i < Program.danhSachSP.TongSoSP(); i++)
             {
+                SanPham item = Program.danhSachSP.GetSanPham(i);
                 // Tạo TableLayoutPanel nhỏ cho từng sản phẩm (2 cột, 1 hàng chính)
                 TableLayoutPanel productPanel = new TableLayoutPanel
                 {
@@ -101,7 +126,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                     Margin = new Padding(3)
                 };
 
-                string imagePath = Application.StartupPath + "\\AnhSP\\" + row["Anh"].ToString();
+                string imagePath = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + item.anhSp;
                 try
                 {
                     pictureBox.Image = Image.FromFile(imagePath);
@@ -124,10 +149,11 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F)); // Giá sản phẩm
                 infoPanel.RowStyles.Add(new RowStyle(SizeType.Absolute, 30F)); // Số lượng
 
+                
                 // Tạo và thêm Label tên sản phẩm
                 Label lblTenSp = new Label
                 {
-                    Text = row["TenSanPham"].ToString(),
+                    Text = item.tenSp,
                     //Dock = DockStyle.Fill,
                     TextAlign = ContentAlignment.MiddleLeft,
                     Font = new Font("Arial", 10, FontStyle.Bold)
@@ -137,7 +163,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 // Tạo và thêm Label giá sản phẩm
                 Label lblGiaSp = new Label
                 {
-                    Text = "Giá: " + row["GiaCa"].ToString() + " VND",
+                    Text = "Giá: " + item.giaSp + " VND",
                     TextAlign = ContentAlignment.MiddleLeft,
                     Font = new Font("Arial", 9)
                 };
@@ -146,9 +172,10 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 // Thay thế Label bằng NumericUpDown cho số lượng
                 NumericUpDown numSoLuong = new NumericUpDown
                 {
-                    Value = 1,  // Giá trị mặc định là số lượng tồn kho
+                    Value = item.soLuong, // Giá trị mặc định là số lượng tồn kho
                     Minimum = 0, // Số lượng không thể nhỏ hơn 0
-                    Maximum = Convert.ToDecimal(row["TonKho"]), // Tối đa là số lượng tồn kho
+                    //Maximum = Convert.ToDecimal(row["TonKho"]), // Tối đa là số lượng tồn kho
+                    Tag = (item.maSp, item.tenSp),
                     TextAlign = HorizontalAlignment.Center,
                     Font = new Font("Arial", 9)
                 };
@@ -161,7 +188,15 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 productPanel.Controls.Add(infoPanel, 1, 0);
 
                 tableSanPhams.Controls.Add(productPanel);
+
+               
             }
+
+            
+            txtTongSoSP.Text = Program.danhSachSP.TongSoLuong().ToString();
+            txtTongSoMatHang.Text = Program.danhSachSP.TongSoSP().ToString();
+            txtTongTien.Text = Program.danhSachSP.TongGiaTri().ToString();
+
         }
 
         private void NumSoLuong_ValueChanged(object sender, EventArgs e)
@@ -169,7 +204,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
             if (!isUserChanging)
                 return;
             NumericUpDown numSoLuong = (NumericUpDown)sender;
-
+            var tag = ((string maSp, string tenSp))numSoLuong.Tag;
             decimal oldValue = Convert.ToDecimal(numSoLuong.Tag);
             decimal newValue = numSoLuong.Value;
 
@@ -189,7 +224,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                     DialogResult xoa =  MessageBox.Show("Bạn muốn xoá sản phẩm khỏi giỏ hàng?","Cẩn thận", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
                     if (xoa == DialogResult.OK)
                     {
-                        XoaSanPhamKhoiGioHang(numSoLuong, tableSanPhams);
+                        XoaSanPhamKhoiGioHang(tag.maSp, tag.tenSp);
                     }else if(xoa == DialogResult.Cancel)
                     {
                         isUserChanging = false; 
@@ -201,6 +236,8 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 {
 
                 numSoLuong.Tag = newValue; // Cập nhật giá trị cũ
+                    //thay doi trong csdl
+                    
                MessageBox.Show("Đổi thành công","Thông báo",MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
@@ -209,27 +246,16 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 // Giữ nguyên giá trị cũ
                 isUserChanging = false; // Tạm tắt sự kiện
                 numSoLuong.Value = oldValue; // Gán lại giá trị cũ
-                isUserChanging = true; // Bật lại sự kiện
             }
         }
 
-        private void XoaSanPhamKhoiGioHang(NumericUpDown numSoLuong, TableLayoutPanel tableSanPhams)
+        private void XoaSanPhamKhoiGioHang(string masp, string tensp)
         {
-            Console.WriteLine("test");
-            // Tìm kiếm TableLayoutPanel chứa sản phẩm
-            TableLayoutPanel productPanel = (TableLayoutPanel)numSoLuong.Parent.Parent;
+           
+            Program.danhSachSP.XoaSanPham(masp);
 
-            //lấy ra hàng
-            int rowIndex = tableSanPhams.GetRow(productPanel);
-            //lay tên sp
-            Label lblTenSp = (Label)productPanel.Controls[1].Controls[0]; // Chỉ số 1: infoPanel, chỉ số 0: lblTenSp
-            string tenSanPham = lblTenSp.Text;
 
-            //xoá hàng
-            tableSanPhams.Controls.Remove(productPanel);
-            //đồng thời xoá trong csdl (chưa có)
-
-            MessageBox.Show("Đã xoá sản phẩm "+tenSanPham,"Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
+           MessageBox.Show("Đã xoá sản phẩm "+ tensp, "Thông báo",MessageBoxButtons.OK,MessageBoxIcon.Information);
             
         }
 

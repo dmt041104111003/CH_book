@@ -52,10 +52,7 @@ namespace CSharpCounterFinalProject.ViewCustomer
                 productLayoutPanel.ColumnCount = 1;
                 productLayoutPanel.Dock = DockStyle.Fill;
                 productLayoutPanel.Tag = product;
-                productLayoutPanel.Click += ProductPanel_Click; //---fix k nhấn đc ?
-
-                
-
+                productLayoutPanel.Click += ProductPanel_Click;
 
                 // PictureBox
                 PictureBox pictureBox = new PictureBox();
@@ -98,13 +95,6 @@ namespace CSharpCounterFinalProject.ViewCustomer
                 // Thêm `TableLayoutPanel` con vào `TableLayoutPanel` chính
                 mainTableLayoutPanel.Controls.Add(productLayoutPanel, productIndex % 3, productIndex / 3);
                 productIndex++;
-
-
-
-                //thêm skien click để đảm bảo nhấn vào đâu thì cũng kích hoạt sự kiện
-                pictureBox.Click += ProductPanel_Click;
-                nameLabel.Click += ProductPanel_Click;
-                priceLabel.Click += ProductPanel_Click;
             }
         }
 
@@ -139,33 +129,19 @@ namespace CSharpCounterFinalProject.ViewCustomer
 
         private void ProductPanel_Click(object sender, EventArgs e)
         {
-            // Ép kiểu `sender` thành `Control`
-            Control control = sender as Control;
-            if (control == null)
-                return;
+            // Ép kiểu sender thành TableLayoutPanel để lấy dữ liệu từ bên trong
+            TableLayoutPanel productPanel = (TableLayoutPanel)sender;
 
-            // Lấy `TableLayoutPanel` cha của `control`
-            TableLayoutPanel productPanel = control.Parent as TableLayoutPanel;
-            if (productPanel == null)
-                return;
-
-            // Tiếp tục xử lý với productPanel
-            PictureBox pictureBox = productPanel.Controls[0] as PictureBox;
-            Label nameLabel = productPanel.Controls[1] as Label;
-            Label priceLabel = productPanel.Controls[2] as Label;
-
-            // Kiểm tra các thành phần con để tránh lỗi null
-            if (nameLabel == null || priceLabel == null || pictureBox == null)
-                return;
+            // Lấy dữ liệu từ các điều khiển trong `productPanel`
+            PictureBox pictureBox = (PictureBox)productPanel.Controls[0]; // Giả sử PictureBox là control đầu tiên
+            Label nameLabel = (Label)productPanel.Controls[1]; // Giả sử nameLabel là control thứ hai
+            Label priceLabel = (Label)productPanel.Controls[2]; // Giả sử priceLabel là control thứ ba
 
             // Lấy dữ liệu từ các điều khiển và sử dụng nó
             string productName = nameLabel.Text;
             string price = priceLabel.Text;
 
-            // Lấy đối tượng `Item` từ thuộc tính Tag
-            Item product = productPanel.Tag as Item;
-            if (product == null)
-                return;
+            Item product = (Item)productPanel.Tag;
 
             // Lấy đường dẫn ảnh từ product
             string fileImage = product.Image.ToString();
@@ -174,9 +150,8 @@ namespace CSharpCounterFinalProject.ViewCustomer
 
             var children = new DetailItemCus(itemID, productName, price, imagePath);
             children.Show();
+
         }
-
-
 
         private void btnSearchCus_Click(object sender, EventArgs e)
         {
@@ -221,7 +196,7 @@ namespace CSharpCounterFinalProject.ViewCustomer
             UpdateTableLayoutPanel(items);
         }
 
-        private void btnLookCart_Click(object sender, EventArgs e) //xem gio hang
+        private void btnLookCart_Click(object sender, EventArgs e)
         {
             var child = new ListItemCus(labelNameCart.Text);
             child.Show();
@@ -232,11 +207,6 @@ namespace CSharpCounterFinalProject.ViewCustomer
             this.Close();
             var children = new HomeCustomerView(UserName);
             children.Show();
-        }
-
-        private void mainTableLayoutPanel_Paint(object sender, PaintEventArgs e)
-        {
-
         }
     }
 }

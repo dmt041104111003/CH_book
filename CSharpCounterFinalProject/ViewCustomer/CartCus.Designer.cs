@@ -65,7 +65,7 @@
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.label1.Location = new System.Drawing.Point(58, 156);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(186, 33);
+            this.label1.Size = new System.Drawing.Size(103, 18);
             this.label1.TabIndex = 1;
             this.label1.Text = "Tên sản phẩm:";
             // 
@@ -76,7 +76,7 @@
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.label2.Location = new System.Drawing.Point(58, 219);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 33);
+            this.label2.Size = new System.Drawing.Size(73, 18);
             this.label2.TabIndex = 2;
             this.label2.Text = "Số lượng:";
             // 
@@ -85,7 +85,7 @@
             this.txtSearchItemCus.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.txtSearchItemCus.Location = new System.Drawing.Point(62, 177);
             this.txtSearchItemCus.Name = "txtSearchItemCus";
-            this.txtSearchItemCus.Size = new System.Drawing.Size(211, 40);
+            this.txtSearchItemCus.Size = new System.Drawing.Size(211, 26);
             this.txtSearchItemCus.TabIndex = 3;
             // 
             // btnSearchCus
@@ -109,7 +109,7 @@
             this.mainTableLayoutPanel.ColumnCount = 3;
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 49.55752F));
             this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50.44248F));
-            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 226F));
+            this.mainTableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 225F));
             this.mainTableLayoutPanel.Cursor = System.Windows.Forms.Cursors.Hand;
             this.mainTableLayoutPanel.Location = new System.Drawing.Point(339, 156);
             this.mainTableLayoutPanel.Name = "mainTableLayoutPanel";
@@ -118,13 +118,12 @@
             this.mainTableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.mainTableLayoutPanel.Size = new System.Drawing.Size(699, 363);
             this.mainTableLayoutPanel.TabIndex = 6;
-            this.mainTableLayoutPanel.Paint += new System.Windows.Forms.PaintEventHandler(this.mainTableLayoutPanel_Paint);
             // 
             // txtQuantityCus
             // 
             this.txtQuantityCus.Location = new System.Drawing.Point(62, 241);
             this.txtQuantityCus.Name = "txtQuantityCus";
-            this.txtQuantityCus.Size = new System.Drawing.Size(211, 40);
+            this.txtQuantityCus.Size = new System.Drawing.Size(211, 26);
             this.txtQuantityCus.TabIndex = 7;
             // 
             // label3
@@ -134,7 +133,7 @@
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.label3.Location = new System.Drawing.Point(57, 27);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(173, 44);
+            this.label3.Size = new System.Drawing.Size(98, 24);
             this.label3.TabIndex = 8;
             this.label3.Text = "Xin chào: ";
             // 
@@ -145,7 +144,7 @@
             this.labelNameCart.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(96)))), ((int)(((byte)(153)))), ((int)(((byte)(102)))));
             this.labelNameCart.Location = new System.Drawing.Point(161, 27);
             this.labelNameCart.Name = "labelNameCart";
-            this.labelNameCart.Size = new System.Drawing.Size(125, 49);
+            this.labelNameCart.Size = new System.Drawing.Size(67, 27);
             this.labelNameCart.TabIndex = 9;
             this.labelNameCart.Text = "label4";
             // 
@@ -167,7 +166,7 @@
             // 
             // CartCus
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(16F, 33F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(237)))), ((int)(((byte)(241)))), ((int)(((byte)(214)))));
             this.ClientSize = new System.Drawing.Size(1052, 559);

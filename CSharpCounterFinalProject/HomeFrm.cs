@@ -41,7 +41,7 @@ namespace CSharpCounterFinalProject
 
         private void TblBillCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.RowIndex >= 0 && e.ColumnIndex == tblBill.Columns["outFile"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblBill.Columns["outFile"].Index)
             {
                 DataGridViewRow row = tblBill.Rows[e.RowIndex];
                 string Bill_Id = row.Cells["Bill_ID"].Value.ToString();             //ma hd
@@ -678,10 +678,10 @@ namespace CSharpCounterFinalProject
             DisplayBill();
 
             // Display stat item
-            DisplayStatItem();
+           // DisplayStatItem();
 
             // Display stat customer
-            DisplayStatCustomer();
+         //   DisplayStatCustomer();
         }
         private void DisplayCustomers()
         {
@@ -702,35 +702,61 @@ namespace CSharpCounterFinalProject
 
         private void DisplayItems()
         {
-            tblItem.Columns["Item_ID"].DataPropertyName = "Item_ID";
-            tblItem.Columns["ItemName"].DataPropertyName = "ItemName";
-            tblItem.Columns["ItemType"].DataPropertyName = "ItemType";
-            tblItem.Columns["Quantity"].DataPropertyName = "Quantity";
-            tblItem.Columns["Brand"].DataPropertyName = "Brand";
-            tblItem.Columns["ReleaseDate"].DataPropertyName = "ReleaseDate";
-            tblItem.Columns["Price"].DataPropertyName = "Price";
-            tblItem.Columns["Name"].DataPropertyName = "Name";
-            tblItem.Columns["Image"].DataPropertyName = "Image";
-            // Display customer
-            tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
-                                                       "FROM Item AS item " +
-                                                       "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID");
+            try
+            {
+                tblItem.Columns["Mã MH"].DataPropertyName = "MaSanPham";        // Mã Sản Phẩm
+                tblItem.Columns["Tên Mh"].DataPropertyName = "TenSanPham";      // Tên Sản Phẩm
+                tblItem.Columns["Hãng SX"].DataPropertyName = "HangSX";         // Hãng Sản Xuất
+                tblItem.Columns["Loại MH"].DataPropertyName = "PhanLoai";       // Phân Loại
+                tblItem.Columns["Giá bán"].DataPropertyName = "GiaCa";          // Giá Cả
+                tblItem.Columns["Khuyến Mãi"].DataPropertyName = "MoTa";        // Mô Tả
+
+                DataTable dtItems = dtBase.DataReader("SELECT MaSanPham, TenSanPham, HangSX, PhanLoai, GiaCa, MoTa FROM [QLBanHang_LTTQ].[dbo].[SanPham]");
+
+                if (dtItems != null && dtItems.Rows.Count > 0)
+                {
+                    tblItem.DataSource = dtItems;
+                }
+                else
+                {
+                    MessageBox.Show("Không có sản phẩm nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+
 
         private void DisplayDiscount()
         {
-            tblDiscount.Columns["Discount_ID"].DataPropertyName = "Discount_ID";
-            tblDiscount.Columns["NameDiscount"].DataPropertyName = "Name";
-            tblDiscount.Columns["StartTime"].DataPropertyName = "StartTime";
-            tblDiscount.Columns["EndTime"].DataPropertyName = "EndTime";
-            tblDiscount.Columns["DiscountType"].DataPropertyName = "DiscountType";
-            tblDiscount.Columns["DiscountPercent"].DataPropertyName = "DiscountPercent";
-            tblDiscount.Columns["DiscountPriceAmount"].DataPropertyName = "DiscountPriceAmount";
-            tblDiscount.Columns["MinPriceToUseDiscount"].DataPropertyName = "MinPriceToUseDiscount";
-            // Display discount
-            tblDiscount.DataSource = dtBase.DataReader("SELECT d.Discount_ID, d.Name, d.StartTime, d.EndTime, d.DiscountType, " +
-                                                       "d.DiscountPercent, d.DiscountPriceAmount, d.MinPriceToUseDiscount " +
-                                                       "FROM Discount AS d ");
+            try
+            {
+                tblDiscount.Columns["ID"].DataPropertyName = "ID";
+                tblDiscount.Columns["MaKM"].DataPropertyName = "MaKM";
+                tblDiscount.Columns["TenKM"].DataPropertyName = "TenKM";
+                tblDiscount.Columns["TrangThai"].DataPropertyName = "TrangThai";
+                tblDiscount.Columns["KM"].DataPropertyName = "KM";
+                tblDiscount.Columns["SoTienKM"].DataPropertyName = "SoTienKM";
+                tblDiscount.Columns["GiaToiThieu"].DataPropertyName = "GiaToiThieu";
+
+                DataTable dtDiscount = dtBase.DataReader("SELECT TOP (1000) [ID], [MaKM], [TenKM], [TrangThai], [KM], [SoTienKM], [GiaToiThieu] " +
+                                                         "FROM [QLBanHang_LTTQ].[dbo].[KhuyenMai]");
+                if (dtDiscount != null && dtDiscount.Rows.Count > 0)
+                {
+                    tblDiscount.DataSource = dtDiscount;
+                }
+                else
+                {
+                    MessageBox.Show("No discount records found to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while displaying discounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         ///////////////////////////////////////////////////////////////////////////////////
@@ -739,23 +765,34 @@ namespace CSharpCounterFinalProject
         // display bill
         private void DisplayBill()
         {
-            tblBill.Columns["Bill_ID"].DataPropertyName = "Bill_ID";
-            tblBill.Columns["FullNameBill"].DataPropertyName = "FullName";
-            tblBill.Columns["StaffName"].DataPropertyName = "StaffName";
-            tblBill.Columns["CreateTimeBill"].DataPropertyName = "CreateTime";
-            tblBill.Columns["TotalItem"].DataPropertyName = "TotalItem";
-            tblBill.Columns["SubTotal"].DataPropertyName = "SubTotal";
-            tblBill.Columns["TotalDiscountAmount"].DataPropertyName = "TotalDiscountAmount";
-            tblBill.Columns["TotalAmount"].DataPropertyName = "TotalAmount";
-            tblBill.Columns["Status"].DataPropertyName = "Status";
-            // Display bill
-            tblBill.DataSource = dtBase.DataReader("SELECT top 18 b.Bill_ID, cus.FullName, b.StaffName, b.CreateTime, b.TotalItem, b.SubTotal, " +
-                                                   "b.TotalDiscountAmount, b.TotalAmount, b.Status " +
-                                                   "FROM (([dbo].[Cart] AS c " +
-                                                   "JOIN [dbo].[Bill] AS b ON b.Cart_ID = c.Cart_ID) " +
-                                                   "JOIN [dbo].[Customer] AS cus ON cus.Customer_ID = c.Customer_ID) " +
-                                                   "ORDER BY b.CreateTime DESC");
+            try
+            {
+                tblBill.Columns["ID"].DataPropertyName = "ID";
+                tblBill.Columns["MaHDB"].DataPropertyName = "MaHDB";
+                tblBill.Columns["TenNguoiDung"].DataPropertyName = "TenNguoiDung";  // Hiển thị tên người mua
+                tblBill.Columns["MaNV"].DataPropertyName = "MaNV";
+                tblBill.Columns["Ngayban"].DataPropertyName = "Ngayban";
+                tblBill.Columns["TongTien"].DataPropertyName = "TongTien";
+
+                // Lấy dữ liệu từ cơ sở dữ liệu với tên người mua
+                DataTable dtBill = dtBase.DataReader("SELECT TOP (1000) b.[ID], b.[MaHDB], nd.[TenNguoiDung], b.[MaNV], b.[Ngayban], b.[TongTien] " +
+                                                     "FROM [QLBanHang_LTTQ].[dbo].[HoaDonBan] AS b " +
+                                                     "JOIN [QLBanHang_LTTQ].[dbo].[NguoiDung] AS nd ON b.MaNguoiDung = nd.MaNguoiDung");
+                if (dtBill != null && dtBill.Rows.Count > 0)
+                {
+                    tblBill.DataSource = dtBill;
+                }
+                else
+                {
+                    MessageBox.Show("No bill records found to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("An error occurred while displaying bills: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
 
         // display stat
         private void DisplayStatItem()
@@ -975,7 +1012,7 @@ namespace CSharpCounterFinalProject
 
             }
             tenTruong.Range["J10"].ColumnWidth = 20;
-            tenTruong.Range["J10"].Font.Color =Color.Red;
+            tenTruong.Range["J10"].Font.Color = Color.Red;
             tenTruong.Range["J10"].Font.Size = 18;
             tenTruong.Range["J10"].Value = "Tổng tiền: " + tongtien;
 

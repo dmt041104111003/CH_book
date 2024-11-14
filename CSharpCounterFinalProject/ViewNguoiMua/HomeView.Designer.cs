@@ -42,6 +42,7 @@
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.tableSanPhams = new System.Windows.Forms.TableLayoutPanel();
             this.colorDialog1 = new System.Windows.Forms.ColorDialog();
+            this.btnDangXuat = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -88,6 +89,7 @@
             // 
             // splitContainer2.Panel1
             // 
+            this.splitContainer2.Panel1.Controls.Add(this.btnDangXuat);
             this.splitContainer2.Panel1.Controls.Add(this.button4);
             this.splitContainer2.Panel1.Controls.Add(this.btnKhuyenMai);
             this.splitContainer2.Panel1.Controls.Add(this.btnGioHang);
@@ -209,6 +211,16 @@
             this.tableSanPhams.Size = new System.Drawing.Size(805, 1200);
             this.tableSanPhams.TabIndex = 2;
             // 
+            // btnDangXuat
+            // 
+            this.btnDangXuat.Location = new System.Drawing.Point(0, 368);
+            this.btnDangXuat.Name = "btnDangXuat";
+            this.btnDangXuat.Size = new System.Drawing.Size(233, 87);
+            this.btnDangXuat.TabIndex = 4;
+            this.btnDangXuat.Text = "ĐĂNG XUẤT";
+            this.btnDangXuat.UseVisualStyleBackColor = true;
+            this.btnDangXuat.Click += new System.EventHandler(this.btnDangXuat_Click);
+            // 
             // HomeView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 29F);
@@ -248,5 +260,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbTimKiemTheo;
         private System.Windows.Forms.ColorDialog colorDialog1;
+        private System.Windows.Forms.Button btnDangXuat;
     }
 }

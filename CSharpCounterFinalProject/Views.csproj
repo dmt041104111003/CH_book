@@ -88,8 +88,10 @@
     <Compile Include="ChartTable.Designer.cs">
       <DependentUpon>ChartTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Classes\DanhSachSanPham.cs" />
     <Compile Include="Classes\DataBaseProcess.cs" />
     <Compile Include="Classes\Item.cs" />
+    <Compile Include="Classes\SanPham.cs" />
     <Compile Include="Classes\SelectedItem.cs" />
     <Compile Include="Classes\UserInfo.cs" />
     <Compile Include="HomeFrm.cs">
