@@ -37,7 +37,8 @@ namespace CSharpCounterFinalProject.Sign
             {
                 MessageBox.Show("Đăng nhập thành công!");
                 var childView = new HomeFrm();
-                childView.Name = username;
+                this.Hide();
+                
                 childView.Show();
             }else if (isNguoiDung)
             {

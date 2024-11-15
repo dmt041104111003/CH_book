@@ -90,7 +90,7 @@ namespace CSharpCounterFinalProject
             this.groupBox10 = new System.Windows.Forms.GroupBox();
             this.btnRefreshBill = new System.Windows.Forms.Button();
             this.btnAddNewBill = new System.Windows.Forms.Button();
-            this.tblBill = new System.Windows.Forms.DataGridView();
+            this.tblHoaDon = new System.Windows.Forms.DataGridView();
             this.Bill_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullNameBill = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StaffName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -111,7 +111,7 @@ namespace CSharpCounterFinalProject
             this.groupBox9 = new System.Windows.Forms.GroupBox();
             this.btnRefreshDiscount = new System.Windows.Forms.Button();
             this.btnAddNeuDiscount = new System.Windows.Forms.Button();
-            this.tblDiscount = new System.Windows.Forms.DataGridView();
+            this.tblKhuyenMai = new System.Windows.Forms.DataGridView();
             this.Discount_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NameDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.StartTime = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -138,7 +138,7 @@ namespace CSharpCounterFinalProject
             this.groupBox6 = new System.Windows.Forms.GroupBox();
             this.btnRefreshCustomer = new System.Windows.Forms.Button();
             this.btnAddNewCustomer = new System.Windows.Forms.Button();
-            this.tblCustomer = new System.Windows.Forms.DataGridView();
+            this.tblKhachHang = new System.Windows.Forms.DataGridView();
             this.Customer_ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.FullName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BirthDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -151,6 +151,7 @@ namespace CSharpCounterFinalProject
             this.tblCustomerEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tblCustomerRemove = new System.Windows.Forms.DataGridViewButtonColumn();
             this.tabItem = new System.Windows.Forms.TabPage();
+            this.tblDuLieu = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.numericItemTo = new System.Windows.Forms.NumericUpDown();
             this.numericItemFrom = new System.Windows.Forms.NumericUpDown();
@@ -196,17 +197,18 @@ namespace CSharpCounterFinalProject
             this.tabBill.SuspendLayout();
             this.groupBox8.SuspendLayout();
             this.groupBox10.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblBill)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblHoaDon)).BeginInit();
             this.tabDiscount.SuspendLayout();
             this.groupBox7.SuspendLayout();
             this.groupBox9.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblDiscount)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).BeginInit();
             this.tabCustomer.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomer)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).BeginInit();
             this.tabItem.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemFrom)).BeginInit();
@@ -655,7 +657,7 @@ namespace CSharpCounterFinalProject
             // 
             this.tabBill.Controls.Add(this.groupBox8);
             this.tabBill.Controls.Add(this.groupBox10);
-            this.tabBill.Controls.Add(this.tblBill);
+            this.tabBill.Controls.Add(this.tblHoaDon);
             this.tabBill.Location = new System.Drawing.Point(10, 46);
             this.tabBill.Name = "tabBill";
             this.tabBill.Padding = new System.Windows.Forms.Padding(3);
@@ -763,11 +765,11 @@ namespace CSharpCounterFinalProject
             this.btnAddNewBill.UseVisualStyleBackColor = true;
             this.btnAddNewBill.Click += new System.EventHandler(this.BtnAddNewBillClick);
             // 
-            // tblBill
+            // tblHoaDon
             // 
-            this.tblBill.AllowUserToAddRows = false;
-            this.tblBill.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblBill.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tblHoaDon.AllowUserToAddRows = false;
+            this.tblHoaDon.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblHoaDon.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -775,9 +777,9 @@ namespace CSharpCounterFinalProject
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
-            this.tblBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblHoaDon.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.tblHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblHoaDon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Bill_ID,
             this.FullNameBill,
             this.StaffName,
@@ -788,13 +790,13 @@ namespace CSharpCounterFinalProject
             this.TotalAmount,
             this.Status,
             this.outFile});
-            this.tblBill.Location = new System.Drawing.Point(-2, -7);
-            this.tblBill.Name = "tblBill";
-            this.tblBill.RowHeadersWidth = 51;
-            this.tblBill.RowTemplate.Height = 24;
-            this.tblBill.Size = new System.Drawing.Size(932, 414);
-            this.tblBill.TabIndex = 12;
-            this.tblBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblBillCellClick);
+            this.tblHoaDon.Location = new System.Drawing.Point(-2, -7);
+            this.tblHoaDon.Name = "tblHoaDon";
+            this.tblHoaDon.RowHeadersWidth = 51;
+            this.tblHoaDon.RowTemplate.Height = 24;
+            this.tblHoaDon.Size = new System.Drawing.Size(932, 414);
+            this.tblHoaDon.TabIndex = 12;
+            this.tblHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblBillCellClick);
             // 
             // Bill_ID
             // 
@@ -871,7 +873,7 @@ namespace CSharpCounterFinalProject
             // 
             this.tabDiscount.Controls.Add(this.groupBox7);
             this.tabDiscount.Controls.Add(this.groupBox9);
-            this.tabDiscount.Controls.Add(this.tblDiscount);
+            this.tabDiscount.Controls.Add(this.tblKhuyenMai);
             this.tabDiscount.Location = new System.Drawing.Point(10, 46);
             this.tabDiscount.Name = "tabDiscount";
             this.tabDiscount.Padding = new System.Windows.Forms.Padding(3);
@@ -979,12 +981,12 @@ namespace CSharpCounterFinalProject
             this.btnAddNeuDiscount.UseVisualStyleBackColor = true;
             this.btnAddNeuDiscount.Click += new System.EventHandler(this.BtnAddNewDiscountClick);
             // 
-            // tblDiscount
+            // tblKhuyenMai
             // 
-            this.tblDiscount.AllowUserToAddRows = false;
-            this.tblDiscount.AllowUserToDeleteRows = false;
-            this.tblDiscount.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblDiscount.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tblKhuyenMai.AllowUserToAddRows = false;
+            this.tblKhuyenMai.AllowUserToDeleteRows = false;
+            this.tblKhuyenMai.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblKhuyenMai.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -992,9 +994,9 @@ namespace CSharpCounterFinalProject
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblDiscount.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.tblDiscount.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblDiscount.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblKhuyenMai.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.tblKhuyenMai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblKhuyenMai.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Discount_ID,
             this.NameDiscount,
             this.StartTime,
@@ -1005,13 +1007,13 @@ namespace CSharpCounterFinalProject
             this.MinPriceToUseDiscount,
             this.tblDiscountEdit,
             this.tblDiscountRemove});
-            this.tblDiscount.Location = new System.Drawing.Point(-4, 0);
-            this.tblDiscount.Name = "tblDiscount";
-            this.tblDiscount.RowHeadersWidth = 51;
-            this.tblDiscount.RowTemplate.Height = 24;
-            this.tblDiscount.Size = new System.Drawing.Size(932, 406);
-            this.tblDiscount.TabIndex = 8;
-            this.tblDiscount.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblDiscountCellClick);
+            this.tblKhuyenMai.Location = new System.Drawing.Point(-4, 0);
+            this.tblKhuyenMai.Name = "tblKhuyenMai";
+            this.tblKhuyenMai.RowHeadersWidth = 51;
+            this.tblKhuyenMai.RowTemplate.Height = 24;
+            this.tblKhuyenMai.Size = new System.Drawing.Size(932, 406);
+            this.tblKhuyenMai.TabIndex = 8;
+            this.tblKhuyenMai.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblDiscountCellClick);
             // 
             // Discount_ID
             // 
@@ -1090,7 +1092,7 @@ namespace CSharpCounterFinalProject
             this.tabCustomer.Controls.Add(this.groupBox4);
             this.tabCustomer.Controls.Add(this.groupBox5);
             this.tabCustomer.Controls.Add(this.groupBox6);
-            this.tabCustomer.Controls.Add(this.tblCustomer);
+            this.tabCustomer.Controls.Add(this.tblKhachHang);
             this.tabCustomer.Location = new System.Drawing.Point(10, 46);
             this.tabCustomer.Name = "tabCustomer";
             this.tabCustomer.Padding = new System.Windows.Forms.Padding(3);
@@ -1273,12 +1275,12 @@ namespace CSharpCounterFinalProject
             this.btnAddNewCustomer.UseVisualStyleBackColor = true;
             this.btnAddNewCustomer.Click += new System.EventHandler(this.BtnAddNewCustomerClick);
             // 
-            // tblCustomer
+            // tblKhachHang
             // 
-            this.tblCustomer.AllowUserToAddRows = false;
-            this.tblCustomer.AllowUserToDeleteRows = false;
-            this.tblCustomer.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.tblCustomer.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
+            this.tblKhachHang.AllowUserToAddRows = false;
+            this.tblKhachHang.AllowUserToDeleteRows = false;
+            this.tblKhachHang.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.tblKhachHang.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Constantia", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1286,9 +1288,9 @@ namespace CSharpCounterFinalProject
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.tblCustomer.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            this.tblCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.tblCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.tblKhachHang.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.tblKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblKhachHang.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Customer_ID,
             this.FullName,
             this.BirthDate,
@@ -1300,13 +1302,13 @@ namespace CSharpCounterFinalProject
             this.Email,
             this.tblCustomerEdit,
             this.tblCustomerRemove});
-            this.tblCustomer.Location = new System.Drawing.Point(-9, 0);
-            this.tblCustomer.Name = "tblCustomer";
-            this.tblCustomer.RowHeadersWidth = 51;
-            this.tblCustomer.RowTemplate.Height = 24;
-            this.tblCustomer.Size = new System.Drawing.Size(937, 390);
-            this.tblCustomer.TabIndex = 4;
-            this.tblCustomer.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblCustomerCellClick);
+            this.tblKhachHang.Location = new System.Drawing.Point(-9, 0);
+            this.tblKhachHang.Name = "tblKhachHang";
+            this.tblKhachHang.RowHeadersWidth = 51;
+            this.tblKhachHang.RowTemplate.Height = 24;
+            this.tblKhachHang.Size = new System.Drawing.Size(937, 390);
+            this.tblKhachHang.TabIndex = 4;
+            this.tblKhachHang.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblCustomerCellClick);
             // 
             // Customer_ID
             // 
@@ -1389,6 +1391,7 @@ namespace CSharpCounterFinalProject
             // 
             // tabItem
             // 
+            this.tabItem.Controls.Add(this.tblDuLieu);
             this.tabItem.Controls.Add(this.groupBox3);
             this.tabItem.Controls.Add(this.groupBox2);
             this.tabItem.Controls.Add(this.groupBox1);
@@ -1400,6 +1403,17 @@ namespace CSharpCounterFinalProject
             this.tabItem.TabIndex = 0;
             this.tabItem.Text = "QL Mặt Hàng";
             this.tabItem.UseVisualStyleBackColor = true;
+            // 
+            // tblDuLieu
+            // 
+            this.tblDuLieu.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.tblDuLieu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.tblDuLieu.Location = new System.Drawing.Point(3, 6);
+            this.tblDuLieu.Name = "tblDuLieu";
+            this.tblDuLieu.RowHeadersWidth = 92;
+            this.tblDuLieu.RowTemplate.Height = 37;
+            this.tblDuLieu.Size = new System.Drawing.Size(910, 295);
+            this.tblDuLieu.TabIndex = 4;
             // 
             // groupBox3
             // 
@@ -1652,11 +1666,11 @@ namespace CSharpCounterFinalProject
             this.Image,
             this.tblItemEdit,
             this.tblItemRemove});
-            this.tblItem.Location = new System.Drawing.Point(-4, 0);
+            this.tblItem.Location = new System.Drawing.Point(-4, 327);
             this.tblItem.Name = "tblItem";
             this.tblItem.RowHeadersWidth = 51;
             this.tblItem.RowTemplate.Height = 24;
-            this.tblItem.Size = new System.Drawing.Size(932, 414);
+            this.tblItem.Size = new System.Drawing.Size(932, 87);
             this.tblItem.TabIndex = 0;
             this.tblItem.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.TblItemCellClick);
             this.tblItem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.tblItem_CellContentClick);
@@ -1780,7 +1794,6 @@ namespace CSharpCounterFinalProject
             this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            //this.Name = "HomeFrm";
             this.Text = "Quản Lý Bán Hàng";
             this.Load += new System.EventHandler(this.HomeFrm_Load);
             this.menuStrip1.ResumeLayout(false);
@@ -1799,20 +1812,21 @@ namespace CSharpCounterFinalProject
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             this.groupBox10.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblBill)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblHoaDon)).EndInit();
             this.tabDiscount.ResumeLayout(false);
             this.groupBox7.ResumeLayout(false);
             this.groupBox7.PerformLayout();
             this.groupBox9.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblDiscount)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhuyenMai)).EndInit();
             this.tabCustomer.ResumeLayout(false);
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
             this.groupBox5.PerformLayout();
             this.groupBox6.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.tblCustomer)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tblKhachHang)).EndInit();
             this.tabItem.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tblDuLieu)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericItemTo)).EndInit();
@@ -1883,7 +1897,7 @@ namespace CSharpCounterFinalProject
         private GroupBox groupBox10;
         private Button btnRefreshBill;
         private Button btnAddNewBill;
-        private DataGridView tblBill;
+        private DataGridView tblHoaDon;
         private TabPage tabDiscount;
         private GroupBox groupBox7;
         private Button btnSearchDiscount;
@@ -1894,7 +1908,7 @@ namespace CSharpCounterFinalProject
         private GroupBox groupBox9;
         private Button btnRefreshDiscount;
         private Button btnAddNeuDiscount;
-        private DataGridView tblDiscount;
+        private DataGridView tblKhuyenMai;
         private DataGridViewTextBoxColumn Discount_ID;
         private DataGridViewTextBoxColumn NameDiscount;
         private DataGridViewTextBoxColumn StartTime;
@@ -1921,7 +1935,7 @@ namespace CSharpCounterFinalProject
         private GroupBox groupBox6;
         private Button btnRefreshCustomer;
         private Button btnAddNewCustomer;
-        private DataGridView tblCustomer;
+        private DataGridView tblKhachHang;
         private DataGridViewTextBoxColumn Customer_ID;
         private DataGridViewTextBoxColumn FullName;
         private DataGridViewTextBoxColumn BirthDate;
@@ -1976,6 +1990,7 @@ namespace CSharpCounterFinalProject
         private DataGridViewTextBoxColumn TotalAmount;
         private DataGridViewTextBoxColumn Status;
         private DataGridViewButtonColumn outFile;
+        private DataGridView tblDuLieu;
     }
 }
 

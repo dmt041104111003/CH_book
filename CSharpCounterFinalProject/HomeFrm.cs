@@ -41,9 +41,9 @@ namespace CSharpCounterFinalProject
 
         private void TblBillCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == tblBill.Columns["outFile"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblHoaDon.Columns["outFile"].Index)
             {
-                DataGridViewRow row = tblBill.Rows[e.RowIndex];
+                DataGridViewRow row = tblHoaDon.Rows[e.RowIndex];
                 string Bill_Id = row.Cells["Bill_ID"].Value.ToString();             //ma hd
                 string CusName = row.Cells["FullNameBill"].Value.ToString();             //ten kh
                 string staffName = row.Cells["StaffName"].Value.ToString();           //ten nv
@@ -87,9 +87,9 @@ namespace CSharpCounterFinalProject
         private void TblDiscountCellClick(object sender, DataGridViewCellEventArgs e)
         {
             Boolean childViewClosed = false;
-            if (e.RowIndex >= 0 && e.ColumnIndex == tblDiscount.Columns["tblDiscountEdit"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblKhuyenMai.Columns["tblDiscountEdit"].Index)
             {
-                DataGridViewRow row = tblDiscount.Rows[e.RowIndex];
+                DataGridViewRow row = tblKhuyenMai.Rows[e.RowIndex];
                 string discount_ID = row.Cells["Discount_ID"].Value.ToString();
                 string name = row.Cells["NameDiscount"].Value.ToString();
                 DateTime startTime = DateTime.Parse(row.Cells["StartTime"].Value.ToString());
@@ -110,12 +110,12 @@ namespace CSharpCounterFinalProject
                 }
                 DisplayItems();
             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex == tblDiscount.Columns["tblDiscountRemove"].Index)
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblKhuyenMai.Columns["tblDiscountRemove"].Index)
             {
                 var title = "Xác nhận xóa";
                 var msg = "Bạn có chắc chắn muốn xóa bản ghi này hay không?";
                 var ans = ShowComfirmDialog(msg, title);
-                DataGridViewRow row = tblDiscount.Rows[e.RowIndex];
+                DataGridViewRow row = tblKhuyenMai.Rows[e.RowIndex];
                 string discount_ID = row.Cells["Discount_ID"].Value.ToString();
                 if (ans == DialogResult.Yes)
                 {
@@ -131,9 +131,9 @@ namespace CSharpCounterFinalProject
         // update, delete customer
         private void TblCustomerCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == tblCustomer.Columns["tblCustomerEdit"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblKhachHang.Columns["tblCustomerEdit"].Index)
             {
-                DataGridViewRow row = tblCustomer.Rows[e.RowIndex];
+                DataGridViewRow row = tblKhachHang.Rows[e.RowIndex];
                 string customer_ID = row.Cells["Customer_ID"].Value.ToString();
                 string fullName = row.Cells["FullName"].Value.ToString();
                 DateTime birthDate = DateTime.Parse(row.Cells["BirthDate"].Value.ToString());
@@ -147,12 +147,12 @@ namespace CSharpCounterFinalProject
                 var childView = new AddEditCustomerFrm("Cập Nhật", customer_ID, fullName, birthDate, address, phone, customerType, point, createTime, email);
                 childView.Show();
             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex == tblCustomer.Columns["tblCustomerRemove"].Index)
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblKhachHang.Columns["tblCustomerRemove"].Index)
             {
                 var title = "Xác nhận xóa";
                 var msg = "Bạn có chắc chắn muốn xóa bản ghi này hay không?";
                 var ans = ShowComfirmDialog(msg, title);
-                DataGridViewRow row = tblCustomer.Rows[e.RowIndex];
+                DataGridViewRow row = tblKhachHang.Rows[e.RowIndex];
                 string customer_ID = row.Cells["Customer_ID"].Value.ToString();
                 if (ans == DialogResult.Yes)
                 {
@@ -353,7 +353,7 @@ namespace CSharpCounterFinalProject
                              "JOIN [dbo].[Bill] AS b ON b.Cart_ID = c.Cart_ID) " +
                              "JOIN [dbo].[Customer] AS cus ON cus.Customer_ID = c.Customer_ID) " +
                              "WHERE b.TotalItem LIKE (N'%" + name + "%')";
-                tblBill.DataSource = dtBase.DataReader(sql);
+                tblHoaDon.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchBill.SelectedIndex == 1) // Tìm theo tên khách hàng.
             {
@@ -364,7 +364,7 @@ namespace CSharpCounterFinalProject
                              "JOIN [dbo].[Bill] AS b ON b.Cart_ID = c.Cart_ID) " +
                              "JOIN [dbo].[Customer] AS cus ON cus.Customer_ID = c.Customer_ID) " +
                              "WHERE cus.FullName LIKE (N'%" + name + "%')";
-                tblBill.DataSource = dtBase.DataReader(sql);
+                tblHoaDon.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchBill.SelectedIndex == 2) // Tìm theo trạng thái hóa đơn.
             {
@@ -375,7 +375,7 @@ namespace CSharpCounterFinalProject
                              "JOIN [dbo].[Bill] AS b ON b.Cart_ID = c.Cart_ID) " +
                              "JOIN [dbo].[Customer] AS cus ON cus.Customer_ID = c.Customer_ID) " +
                              "WHERE b.Status LIKE (N'%" + name + "%')";
-                tblBill.DataSource = dtBase.DataReader(sql);
+                tblHoaDon.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchBill.SelectedIndex == 3) // Tìm theo tên nhân viên
             {
@@ -386,7 +386,7 @@ namespace CSharpCounterFinalProject
                              "JOIN [dbo].[Bill] AS b ON b.Cart_ID = c.Cart_ID) " +
                              "JOIN [dbo].[Customer] AS cus ON cus.Customer_ID = c.Customer_ID) " +
                              "WHERE b.StaffName LIKE (N'%" + name + "%')";
-                tblBill.DataSource = dtBase.DataReader(sql);
+                tblHoaDon.DataSource = dtBase.DataReader(sql);
             }
         }
 
@@ -405,7 +405,7 @@ namespace CSharpCounterFinalProject
                 string sql = "SELECT d.Discount_ID ,d.Name, d.StartTime, d.EndTime, d.DiscountType, d.DiscountPercent, d.DiscountPriceAmount " +
                                     "FROM Discount as d " +
                                     "WHERE d.Name LIKE (N'%" + name + "%')";
-                tblDiscount.DataSource = dtBase.DataReader(sql);
+                tblKhuyenMai.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchDiscount.SelectedIndex == 1) // Mã khuyến mãi
             {
@@ -413,7 +413,7 @@ namespace CSharpCounterFinalProject
                 string sql = "SELECT d.Discount_ID ,d.Name, d.StartTime, d.EndTime, d.DiscountType, d.DiscountPercent, d.DiscountPriceAmount " +
                                     "FROM Discount as d " +
                                     "WHERE d.Discount_ID LIKE (N'%" + name + "%')";
-                tblDiscount.DataSource = dtBase.DataReader(sql);
+                tblKhuyenMai.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchDiscount.SelectedIndex == 2) // Loại khuyến mãi
             {
@@ -421,7 +421,7 @@ namespace CSharpCounterFinalProject
                 string sql = "SELECT d.Discount_ID ,d.Name, d.StartTime, d.EndTime, d.DiscountType, d.DiscountPercent, d.DiscountPriceAmount " +
                                     "FROM Discount as d " +
                                     "WHERE d.DiscountType LIKE (N'%" + name + "%')";
-                tblDiscount.DataSource = dtBase.DataReader(sql);
+                tblKhuyenMai.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchDiscount.SelectedIndex == 3) // Số tiền KM
             {
@@ -429,7 +429,7 @@ namespace CSharpCounterFinalProject
                 string sql = "SELECT d.Discount_ID ,d.Name, d.StartTime, d.EndTime, d.DiscountType, d.DiscountPercent, d.DiscountPriceAmount " +
                                     "FROM Discount as d " +
                                     "WHERE d.DiscountPriceAmount LIKE (N'%" + name + "%')";
-                tblDiscount.DataSource = dtBase.DataReader(sql);
+                tblKhuyenMai.DataSource = dtBase.DataReader(sql);
             }
         }
 
@@ -449,7 +449,7 @@ namespace CSharpCounterFinalProject
                                     "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                     "FROM Customer AS customer " +
                                     "WHERE customer.FullName LIKE (N'%" + name + "%')";
-                tblCustomer.DataSource = dtBase.DataReader(sql);
+                tblKhachHang.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchCustomer.SelectedIndex == 1) // ma khach hang
             {
@@ -458,7 +458,7 @@ namespace CSharpCounterFinalProject
                                     "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                     "FROM Customer AS customer " +
                                     "WHERE customer.Customer_ID LIKE (N'%" + name + "%')";
-                tblCustomer.DataSource = dtBase.DataReader(sql);
+                tblKhachHang.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchCustomer.SelectedIndex == 2) // loai khach hang
             {
@@ -467,7 +467,7 @@ namespace CSharpCounterFinalProject
                                     "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                     "FROM Customer AS customer " +
                                     "WHERE customer.CustomerType LIKE (N'%" + name + "%')";
-                tblCustomer.DataSource = dtBase.DataReader(sql);
+                tblKhachHang.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchCustomer.SelectedIndex == 3) // dia chi
             {
@@ -476,7 +476,7 @@ namespace CSharpCounterFinalProject
                                     "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                     "FROM Customer AS customer " +
                                     "WHERE customer.Address LIKE (N'%" + name + "%')";
-                tblCustomer.DataSource = dtBase.DataReader(sql);
+                tblKhachHang.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchCustomer.SelectedIndex == 4) // so dien thoai
             {
@@ -485,7 +485,7 @@ namespace CSharpCounterFinalProject
                                     "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                     "FROM Customer AS customer " +
                                     "WHERE customer.PhoneNumber LIKE (N'%" + name + "%')";
-                tblCustomer.DataSource = dtBase.DataReader(sql);
+                tblKhachHang.DataSource = dtBase.DataReader(sql);
             }
         }
 
@@ -604,7 +604,7 @@ namespace CSharpCounterFinalProject
 
             if (radioSortCustomerByName.Checked)
             {
-                tblCustomer.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
+                tblKhachHang.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
                                                        "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                                        "FROM Customer AS customer " +
                                                        "where customer.Email not in (select Email from [dbo].[Customer] where Email = N'admin') " +
@@ -612,7 +612,7 @@ namespace CSharpCounterFinalProject
             }
             else if (radioSortCustomerById.Checked)
             {
-                tblCustomer.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
+                tblKhachHang.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
                                                        "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                                        "FROM Customer AS customer " +
                                                        "where customer.Email not in (select Email from [dbo].[Customer] where Email = N'admin') " +
@@ -620,7 +620,7 @@ namespace CSharpCounterFinalProject
             }
             else if (radioSortCustomerByPoint.Checked)
             {
-                tblCustomer.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
+                tblKhachHang.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
                                                        "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                                        "FROM Customer AS customer " +
                                                        "where customer.Email not in (select Email from [dbo].[Customer] where Email = N'admin') " +
@@ -628,7 +628,7 @@ namespace CSharpCounterFinalProject
             }
             else if (radioSortCustomerByCreatedDate.Checked)
             {
-                tblCustomer.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
+                tblKhachHang.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
                                                        "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                                        "FROM Customer AS customer " +
                                                        "where customer.Email not in (select Email from [dbo].[Customer] where Email = N'admin') " +
@@ -636,7 +636,7 @@ namespace CSharpCounterFinalProject
             }
             else if (radioSortCustomerByBirthDate.Checked)
             {
-                tblCustomer.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
+                tblKhachHang.DataSource = dtBase.DataReader("SELECT customer.Customer_ID, customer.FullName, customer.BirthDate, customer.Address," +
                                                        "customer.PhoneNumber, customer.CustomerType, customer.Point, customer.CreateTime, customer.Email " +
                                                        "FROM Customer AS customer " +
                                                        "where customer.Email not in (select Email from [dbo].[Customer] where Email = N'admin') " +
@@ -675,7 +675,7 @@ namespace CSharpCounterFinalProject
             DisplayDiscount();
 
             // Display Bill
-            DisplayBill();
+          //  DisplayBill();
 
             // Display stat item
            // DisplayStatItem();
@@ -685,37 +685,102 @@ namespace CSharpCounterFinalProject
         }
         private void DisplayCustomers()
         {
-            tblCustomer.Columns["Customer_ID"].DataPropertyName = "Customer_ID";
-            tblCustomer.Columns["FullName"].DataPropertyName = "FullName";
-            tblCustomer.Columns["BirthDate"].DataPropertyName = "BirthDate";
-            tblCustomer.Columns["Address"].DataPropertyName = "Address";
-            tblCustomer.Columns["PhoneNumber"].DataPropertyName = "PhoneNumber";
-            tblCustomer.Columns["CustomerType"].DataPropertyName = "CustomerType";
-            tblCustomer.Columns["Point"].DataPropertyName = "Point";
-            tblCustomer.Columns["CreateTime"].DataPropertyName = "CreateTime";
-            tblCustomer.Columns["Email"].DataPropertyName = "Email";
-            // Display customer
-            tblCustomer.DataSource = dtBase.DataReader("SELECT Customer_ID, FullName, BirthDate, Address, PhoneNumber, CustomerType, Point, CreateTime, Email " +
-                                                       "FROM Customer " +
-                                                       "where Email not in (select Email from [dbo].[Customer] where Email = N'admin')");
+            try
+            {
+                // Thêm cột vào bảng tblDuLieu
+                tblKhachHang.Columns.Clear(); // Xóa các cột cũ (nếu có)
+                tblKhachHang.Rows.Clear(); // Xóa các dòng cũ (nếu có)
+
+                // Thêm cột vào tblDuLieu giống như tblItem
+                tblKhachHang.Columns.Add("MaNguoiDung", "Mã Khách hàng");
+                tblKhachHang.Columns.Add("TenNguoiDung", "Tên Khách hàng");
+                tblKhachHang.Columns.Add("DiaChi", "Địa chỉ");
+                tblKhachHang.Columns.Add("SDT", "SĐT");
+                tblKhachHang.Columns.Add("GioiTinh", "Giới tính");
+                //tblKhachHang.Columns.Add("GhiChu", "GhiChu");
+
+                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+                btnEdit.Name = "Sửa";
+                btnEdit.HeaderText = "Sửa";
+                btnEdit.Text = "Sửa";
+                btnEdit.UseColumnTextForButtonValue = true;
+                tblKhachHang.Columns.Add(btnEdit);
+
+                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+                btnDelete.Name = "Xoá";
+                btnDelete.HeaderText = "Xoá";
+                btnDelete.Text = "Xoá";
+                btnDelete.UseColumnTextForButtonValue = true;
+                tblKhachHang.Columns.Add(btnDelete);
+
+                // Lấy dữ liệu từ cơ sở dữ liệu
+                DataTable dtItems = dtBase.DataReader("select MaNguoiDung, TenNguoiDung,DiaChi,SDT,GioiTinh from NguoiDung");
+
+                if (dtItems != null && dtItems.Rows.Count > 0)
+                {
+                    foreach (DataRow row in dtItems.Rows)
+                    {
+                        int rowIndex = tblKhachHang.Rows.Add(row["MaNguoiDung"], row["TenNguoiDung"], row["DiaChi"], row["SDT"], row["GioiTinh"]);
+
+                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
+                        tblKhachHang.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
+                        tblKhachHang.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Không có khách hàng nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi hiển thị khách hàng: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         private void DisplayItems()
         {
             try
             {
-                tblItem.Columns["Mã MH"].DataPropertyName = "MaSanPham";        // Mã Sản Phẩm
-                tblItem.Columns["Tên Mh"].DataPropertyName = "TenSanPham";      // Tên Sản Phẩm
-                tblItem.Columns["Hãng SX"].DataPropertyName = "HangSX";         // Hãng Sản Xuất
-                tblItem.Columns["Loại MH"].DataPropertyName = "PhanLoai";       // Phân Loại
-                tblItem.Columns["Giá bán"].DataPropertyName = "GiaCa";          // Giá Cả
-                tblItem.Columns["Khuyến Mãi"].DataPropertyName = "MoTa";        // Mô Tả
+                // Thêm cột vào bảng tblDuLieu
+                tblDuLieu.Columns.Clear(); // Xóa các cột cũ (nếu có)
+                tblDuLieu.Rows.Clear(); // Xóa các dòng cũ (nếu có)
 
+                // Thêm cột vào tblDuLieu giống như tblItem
+                tblDuLieu.Columns.Add("MaSanPham", "Mã MH");
+                tblDuLieu.Columns.Add("TenSanPham", "Tên MH");
+                tblDuLieu.Columns.Add("HangSX", "Hãng SX");
+                tblDuLieu.Columns.Add("PhanLoai", "Loại MH");
+                tblDuLieu.Columns.Add("GiaCa", "Giá bán");
+                tblDuLieu.Columns.Add("MoTa", "Mô tả");
+
+                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+                btnEdit.Name = "Sửa";
+                btnEdit.HeaderText = "Sửa";
+                btnEdit.Text = "Sửa";
+                btnEdit.UseColumnTextForButtonValue = true;
+                tblDuLieu.Columns.Add(btnEdit);
+
+                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+                btnDelete.Name = "Xoá";
+                btnDelete.HeaderText = "Xoá";
+                btnDelete.Text = "Xoá";
+                btnDelete.UseColumnTextForButtonValue = true;
+                tblDuLieu.Columns.Add(btnDelete);
+
+                // Lấy dữ liệu từ cơ sở dữ liệu
                 DataTable dtItems = dtBase.DataReader("SELECT MaSanPham, TenSanPham, HangSX, PhanLoai, GiaCa, MoTa FROM [QLBanHang_LTTQ].[dbo].[SanPham]");
 
                 if (dtItems != null && dtItems.Rows.Count > 0)
                 {
-                    tblItem.DataSource = dtItems;
+                    foreach (DataRow row in dtItems.Rows)
+                    {
+                        int rowIndex = tblDuLieu.Rows.Add(row["MaSanPham"], row["TenSanPham"], row["HangSX"], row["PhanLoai"], row["GiaCa"], row["MoTa"]);
+
+                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
+                        tblDuLieu.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
+                        tblDuLieu.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
+                    }
                 }
                 else
                 {
@@ -729,50 +794,73 @@ namespace CSharpCounterFinalProject
         }
 
 
-
         private void DisplayDiscount()
         {
             try
             {
-                tblDiscount.Columns["ID"].DataPropertyName = "ID";
-                tblDiscount.Columns["MaKM"].DataPropertyName = "MaKM";
-                tblDiscount.Columns["TenKM"].DataPropertyName = "TenKM";
-                tblDiscount.Columns["TrangThai"].DataPropertyName = "TrangThai";
-                tblDiscount.Columns["KM"].DataPropertyName = "KM";
-                tblDiscount.Columns["SoTienKM"].DataPropertyName = "SoTienKM";
-                tblDiscount.Columns["GiaToiThieu"].DataPropertyName = "GiaToiThieu";
+                // Thêm cột vào bảng tblDuLieu
+                tblKhuyenMai.Columns.Clear(); // Xóa các cột cũ (nếu có)
+                tblKhuyenMai.Rows.Clear(); // Xóa các dòng cũ (nếu có)
 
-                DataTable dtDiscount = dtBase.DataReader("SELECT TOP (1000) [ID], [MaKM], [TenKM], [TrangThai], [KM], [SoTienKM], [GiaToiThieu] " +
-                                                         "FROM [QLBanHang_LTTQ].[dbo].[KhuyenMai]");
-                if (dtDiscount != null && dtDiscount.Rows.Count > 0)
+                // Thêm cột vào tblDuLieu giống như tblItem
+                tblKhuyenMai.Columns.Add("MaKM", "Mã Khuyến Mãi");
+                tblKhuyenMai.Columns.Add("TenKM", "Tên Khuyến Mãi");
+                tblKhuyenMai.Columns.Add("TrangThai", "Trạng thái");
+                tblKhuyenMai.Columns.Add("SoTienKM", "Số Tiền KM");
+                tblKhuyenMai.Columns.Add("GiaToiThieu", "Giá Tối Thiểu");
+                //tblKhachHang.Columns.Add("GhiChu", "GhiChu");
+
+                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
+                btnEdit.Name = "Sửa";
+                btnEdit.HeaderText = "Sửa";
+                btnEdit.Text = "Sửa";
+                btnEdit.UseColumnTextForButtonValue = true;
+                tblKhuyenMai.Columns.Add(btnEdit);
+
+                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
+                btnDelete.Name = "Xoá";
+                btnDelete.HeaderText = "Xoá";
+                btnDelete.Text = "Xoá";
+                btnDelete.UseColumnTextForButtonValue = true;
+                tblKhuyenMai.Columns.Add(btnDelete);
+
+                // Lấy dữ liệu từ cơ sở dữ liệu
+                DataTable dtItems = dtBase.DataReader("select MaKM, TenKM, TrangThai, SoTienKM,GiaToiThieu from KhuyenMai");
+
+                if (dtItems != null && dtItems.Rows.Count > 0)
                 {
-                    tblDiscount.DataSource = dtDiscount;
+                    foreach (DataRow row in dtItems.Rows)
+                    {
+                        int rowIndex = tblKhuyenMai.Rows.Add(row["MaKM"], row["TenKM"], row["TrangThai"], row["SoTienKM"], row["GiaToiThieu"]);
+
+                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
+                        tblKhuyenMai.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
+                        tblKhuyenMai.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("No discount records found to display.", "Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Không có khuyến mãi nào để hiển thị.", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             }
             catch (Exception ex)
             {
-                MessageBox.Show("An error occurred while displaying discounts: " + ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Lỗi khi hiển thị khuyến mãi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
-        ///////////////////////////////////////////////////////////////////////////////////
-        /// phan nay lien quan toi hoa don
 
         // display bill
         private void DisplayBill()
         {
             try
             {
-                tblBill.Columns["ID"].DataPropertyName = "ID";
-                tblBill.Columns["MaHDB"].DataPropertyName = "MaHDB";
-                tblBill.Columns["TenNguoiDung"].DataPropertyName = "TenNguoiDung";  // Hiển thị tên người mua
-                tblBill.Columns["MaNV"].DataPropertyName = "MaNV";
-                tblBill.Columns["Ngayban"].DataPropertyName = "Ngayban";
-                tblBill.Columns["TongTien"].DataPropertyName = "TongTien";
+                tblHoaDon.Columns["ID"].DataPropertyName = "ID";
+                tblHoaDon.Columns["MaHDB"].DataPropertyName = "MaHDB";
+                tblHoaDon.Columns["TenNguoiDung"].DataPropertyName = "TenNguoiDung";  // Hiển thị tên người mua
+                tblHoaDon.Columns["MaNV"].DataPropertyName = "MaNV";
+                tblHoaDon.Columns["Ngayban"].DataPropertyName = "Ngayban";
+                tblHoaDon.Columns["TongTien"].DataPropertyName = "TongTien";
 
                 // Lấy dữ liệu từ cơ sở dữ liệu với tên người mua
                 DataTable dtBill = dtBase.DataReader("SELECT TOP (1000) b.[ID], b.[MaHDB], nd.[TenNguoiDung], b.[MaNV], b.[Ngayban], b.[TongTien] " +
@@ -780,7 +868,7 @@ namespace CSharpCounterFinalProject
                                                      "JOIN [QLBanHang_LTTQ].[dbo].[NguoiDung] AS nd ON b.MaNguoiDung = nd.MaNguoiDung");
                 if (dtBill != null && dtBill.Rows.Count > 0)
                 {
-                    tblBill.DataSource = dtBill;
+                    tblHoaDon.DataSource = dtBill;
                 }
                 else
                 {
@@ -926,7 +1014,7 @@ namespace CSharpCounterFinalProject
             int col = 1;
 
             // Ghi dữ liệu từ DataGridView (hoặc bất kỳ nguồn dữ liệu nào) vào Excel
-            foreach (DataGridViewRow dgvRow in tblBill.Rows)
+            foreach (DataGridViewRow dgvRow in tblHoaDon.Rows)
             {
                 col = 1;
                 foreach (DataGridViewCell cell in dgvRow.Cells)

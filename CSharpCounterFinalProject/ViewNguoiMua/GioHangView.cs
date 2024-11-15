@@ -205,6 +205,7 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 return;
             NumericUpDown numSoLuong = (NumericUpDown)sender;
             var tag = ((string maSp, string tenSp))numSoLuong.Tag;
+           
             decimal oldValue = Convert.ToDecimal(numSoLuong.Tag);
             decimal newValue = numSoLuong.Value;
 
