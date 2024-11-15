@@ -120,46 +120,46 @@
     <Compile Include="Sign\SignUp.Designer.cs">
       <DependentUpon>SignUp.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\CartCus.cs">
+    <Compile Include="Sign\ViewCustomer\CartCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\CartCus.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\CartCus.Designer.cs">
       <DependentUpon>CartCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\CustomerInformationView.cs">
+    <Compile Include="Sign\ViewCustomer\CustomerInformationView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\CustomerInformationView.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\CustomerInformationView.Designer.cs">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\DetailItemCus.cs">
+    <Compile Include="Sign\ViewCustomer\DetailItemCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\DetailItemCus.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\DetailItemCus.Designer.cs">
       <DependentUpon>DetailItemCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\EditNumberItems.cs">
+    <Compile Include="Sign\ViewCustomer\EditNumberItems.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\EditNumberItems.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\EditNumberItems.Designer.cs">
       <DependentUpon>EditNumberItems.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\HomeCustomerView.cs">
+    <Compile Include="Sign\ViewCustomer\HomeCustomerView.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\HomeCustomerView.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\HomeCustomerView.Designer.cs">
       <DependentUpon>HomeCustomerView.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\ListItemCus.cs">
+    <Compile Include="Sign\ViewCustomer\ListItemCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\ListItemCus.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\ListItemCus.Designer.cs">
       <DependentUpon>ListItemCus.cs</DependentUpon>
     </Compile>
-    <Compile Include="ViewCustomer\ReceiptCusCus.cs">
+    <Compile Include="Sign\ViewCustomer\ReceiptCusCus.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ViewCustomer\ReceiptCusCus.Designer.cs">
+    <Compile Include="Sign\ViewCustomer\ReceiptCusCus.Designer.cs">
       <DependentUpon>ReceiptCusCus.cs</DependentUpon>
     </Compile>
     <Compile Include="ViewNguoiMua\ChiTietSanPhamView.cs">
@@ -215,25 +215,25 @@
     <EmbeddedResource Include="Sign\SignUp.resx">
       <DependentUpon>SignUp.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\CartCus.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\CartCus.resx">
       <DependentUpon>CartCus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\CustomerInformationView.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\CustomerInformationView.resx">
       <DependentUpon>CustomerInformationView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\DetailItemCus.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\DetailItemCus.resx">
       <DependentUpon>DetailItemCus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\EditNumberItems.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\EditNumberItems.resx">
       <DependentUpon>EditNumberItems.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\HomeCustomerView.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\HomeCustomerView.resx">
       <DependentUpon>HomeCustomerView.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\ListItemCus.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\ListItemCus.resx">
       <DependentUpon>ListItemCus.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ViewCustomer\ReceiptCusCus.resx">
+    <EmbeddedResource Include="Sign\ViewCustomer\ReceiptCusCus.resx">
       <DependentUpon>ReceiptCusCus.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ViewNguoiMua\ChiTietSanPhamView.resx">

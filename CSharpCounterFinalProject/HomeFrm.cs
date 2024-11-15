@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Excel = Microsoft.Office.Interop.Excel;
@@ -168,9 +169,9 @@ namespace CSharpCounterFinalProject
         // update, delete item
         private void TblItemCellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.ColumnIndex == tblItem.Columns["tblItemEdit"].Index)
+            if (e.RowIndex >= 0 && e.ColumnIndex == tblDuLieu.Columns["tblItemEdit"].Index)
             {
-                DataGridViewRow row = tblItem.Rows[e.RowIndex];
+                DataGridViewRow row = tblDuLieu.Rows[e.RowIndex];
                 int item_ID = int.Parse(row.Cells["Item_ID"].Value.ToString());
                 string itemName = row.Cells["ItemName"].Value.ToString();
                 string itemType = row.Cells["ItemType"].Value.ToString();
@@ -184,12 +185,12 @@ namespace CSharpCounterFinalProject
                 var childView = new AddEditItemFrm("Cập Nhật", item_ID, itemName, itemType, quantity, brand, releaseDate, price, discount, image);
                 childView.Show();
             }
-            else if (e.RowIndex >= 0 && e.ColumnIndex == tblItem.Columns["tblItemRemove"].Index)
+            else if (e.RowIndex >= 0 && e.ColumnIndex == tblDuLieu.Columns["tblItemRemove"].Index)
             {
                 var title = "Xác nhận xóa";
                 var msg = "Bạn có chắc chắn muốn xóa bản ghi này hay không?";
                 var ans = ShowComfirmDialog(msg, title);
-                DataGridViewRow row = tblItem.Rows[e.RowIndex];
+                DataGridViewRow row = tblDuLieu.Rows[e.RowIndex];
                 int item_ID = int.Parse(row.Cells["Item_ID"].Value.ToString());
                 if (ans == DialogResult.Yes)
                 {
@@ -213,35 +214,35 @@ namespace CSharpCounterFinalProject
         {
             if (radioSortItemByPriceASC.Checked)
             {
-                tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
+                tblDuLieu.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
                                                        "FROM Item AS item " +
                                                        "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                                                        "ORDER BY Price");
             }
             else if (radioSortItemByPriceDESC.Checked)
             {
-                tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
+                tblDuLieu.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
                                                        "FROM Item AS item " +
                                                        "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                                                        "ORDER BY Price DESC");
             }
             else if (radioSortItemByQuantity.Checked)
             {
-                tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
+                tblDuLieu.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
                                                        "FROM Item AS item " +
                                                        "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                                                        "ORDER BY Quantity DESC");
             }
             else if (radioSortItemByProductDate.Checked)
             {
-                tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
+                tblDuLieu.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
                                                        "FROM Item AS item " +
                                                        "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                                                        "ORDER BY item.ReleaseDate");
             }
             else if (radioSortItemByName.Checked)
             {
-                tblItem.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
+                tblDuLieu.DataSource = dtBase.DataReader("SELECT item.Item_ID, item.ItemName, item.ItemType, item.Quantity, item.Brand, item.ReleaseDate, item.Price, discount.Name, item.Image " +
                                                        "FROM Item AS item " +
                                                        "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                                                        "ORDER BY ItemName");
@@ -507,7 +508,7 @@ namespace CSharpCounterFinalProject
                              "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                              "WHERE item.ItemName LIKE (N'%" + name + "%')";
 
-                tblItem.DataSource = dtBase.DataReader(sql);
+                tblDuLieu.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchItem.SelectedIndex == 1)
             {
@@ -523,7 +524,7 @@ namespace CSharpCounterFinalProject
                              "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                              "WHERE item.Price BETWEEN " + from + " AND " + to;
 
-                tblItem.DataSource = dtBase.DataReader(sql);
+                tblDuLieu.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchItem.SelectedIndex == 2) // loai mat hang
             {
@@ -533,7 +534,7 @@ namespace CSharpCounterFinalProject
                              "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                              "WHERE item.ItemType LIKE (N'%" + name + "%')";
 
-                tblItem.DataSource = dtBase.DataReader(sql);
+                tblDuLieu.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchItem.SelectedIndex == 3) // hang
             {
@@ -543,7 +544,7 @@ namespace CSharpCounterFinalProject
                              "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                              "WHERE item.Brand LIKE (N'%" + name + "%')";
 
-                tblItem.DataSource = dtBase.DataReader(sql);
+                tblDuLieu.DataSource = dtBase.DataReader(sql);
             }
             else if (comboSearchItem.SelectedIndex == 4)
             {
@@ -558,7 +559,7 @@ namespace CSharpCounterFinalProject
                              "JOIN Discount AS discount ON item.Discount_ID = discount.Discount_ID " +
                              "WHERE item.Quantity BETWEEN " + from + " AND " + to;
 
-                tblItem.DataSource = dtBase.DataReader(sql);
+                tblDuLieu.DataSource = dtBase.DataReader(sql);
             }
         }
 
@@ -682,6 +683,7 @@ namespace CSharpCounterFinalProject
 
             // Display stat customer
          //   DisplayStatCustomer();
+
         }
         private void DisplayCustomers()
         {
@@ -697,21 +699,7 @@ namespace CSharpCounterFinalProject
                 tblKhachHang.Columns.Add("DiaChi", "Địa chỉ");
                 tblKhachHang.Columns.Add("SDT", "SĐT");
                 tblKhachHang.Columns.Add("GioiTinh", "Giới tính");
-                //tblKhachHang.Columns.Add("GhiChu", "GhiChu");
-
-                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-                btnEdit.Name = "Sửa";
-                btnEdit.HeaderText = "Sửa";
-                btnEdit.Text = "Sửa";
-                btnEdit.UseColumnTextForButtonValue = true;
-                tblKhachHang.Columns.Add(btnEdit);
-
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                btnDelete.Name = "Xoá";
-                btnDelete.HeaderText = "Xoá";
-                btnDelete.Text = "Xoá";
-                btnDelete.UseColumnTextForButtonValue = true;
-                tblKhachHang.Columns.Add(btnDelete);
+                
 
                 // Lấy dữ liệu từ cơ sở dữ liệu
                 DataTable dtItems = dtBase.DataReader("select MaNguoiDung, TenNguoiDung,DiaChi,SDT,GioiTinh from NguoiDung");
@@ -721,10 +709,6 @@ namespace CSharpCounterFinalProject
                     foreach (DataRow row in dtItems.Rows)
                     {
                         int rowIndex = tblKhachHang.Rows.Add(row["MaNguoiDung"], row["TenNguoiDung"], row["DiaChi"], row["SDT"], row["GioiTinh"]);
-
-                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
-                        tblKhachHang.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
-                        tblKhachHang.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
                     }
                 }
                 else
@@ -740,6 +724,7 @@ namespace CSharpCounterFinalProject
 
         private void DisplayItems()
         {
+
             try
             {
                 // Thêm cột vào bảng tblDuLieu
@@ -751,35 +736,22 @@ namespace CSharpCounterFinalProject
                 tblDuLieu.Columns.Add("TenSanPham", "Tên MH");
                 tblDuLieu.Columns.Add("HangSX", "Hãng SX");
                 tblDuLieu.Columns.Add("PhanLoai", "Loại MH");
+                tblDuLieu.Columns.Add("TonKho", "Tồn kho");
                 tblDuLieu.Columns.Add("GiaCa", "Giá bán");
                 tblDuLieu.Columns.Add("MoTa", "Mô tả");
+                tblDuLieu.Columns.Add("Anh", "Anh");
+                tblDuLieu.Columns["Anh"].Visible = false;
 
-                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-                btnEdit.Name = "Sửa";
-                btnEdit.HeaderText = "Sửa";
-                btnEdit.Text = "Sửa";
-                btnEdit.UseColumnTextForButtonValue = true;
-                tblDuLieu.Columns.Add(btnEdit);
-
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                btnDelete.Name = "Xoá";
-                btnDelete.HeaderText = "Xoá";
-                btnDelete.Text = "Xoá";
-                btnDelete.UseColumnTextForButtonValue = true;
-                tblDuLieu.Columns.Add(btnDelete);
 
                 // Lấy dữ liệu từ cơ sở dữ liệu
-                DataTable dtItems = dtBase.DataReader("SELECT MaSanPham, TenSanPham, HangSX, PhanLoai, GiaCa, MoTa FROM [QLBanHang_LTTQ].[dbo].[SanPham]");
+                DataTable dtItems = dtBase.DataReader("SELECT MaSanPham, TenSanPham, HangSX, PhanLoai,TonKho, GiaCa, MoTa,Anh FROM [QLBanHang_LTTQ].[dbo].[SanPham]");
 
                 if (dtItems != null && dtItems.Rows.Count > 0)
                 {
                     foreach (DataRow row in dtItems.Rows)
                     {
-                        int rowIndex = tblDuLieu.Rows.Add(row["MaSanPham"], row["TenSanPham"], row["HangSX"], row["PhanLoai"], row["GiaCa"], row["MoTa"]);
+                        int rowIndex = tblDuLieu.Rows.Add(row["MaSanPham"], row["TenSanPham"], row["HangSX"], row["PhanLoai"],row["TonKho"], row["GiaCa"], row["MoTa"], row["Anh"]);
 
-                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
-                        tblDuLieu.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
-                        tblDuLieu.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
                     }
                 }
                 else
@@ -791,6 +763,10 @@ namespace CSharpCounterFinalProject
             {
                 MessageBox.Show("Lỗi khi hiển thị sản phẩm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
+            btnSuaSP.Enabled = false;
+            btnXoaSP.Enabled = false;
         }
 
 
@@ -808,21 +784,7 @@ namespace CSharpCounterFinalProject
                 tblKhuyenMai.Columns.Add("TrangThai", "Trạng thái");
                 tblKhuyenMai.Columns.Add("SoTienKM", "Số Tiền KM");
                 tblKhuyenMai.Columns.Add("GiaToiThieu", "Giá Tối Thiểu");
-                //tblKhachHang.Columns.Add("GhiChu", "GhiChu");
 
-                DataGridViewButtonColumn btnEdit = new DataGridViewButtonColumn();
-                btnEdit.Name = "Sửa";
-                btnEdit.HeaderText = "Sửa";
-                btnEdit.Text = "Sửa";
-                btnEdit.UseColumnTextForButtonValue = true;
-                tblKhuyenMai.Columns.Add(btnEdit);
-
-                DataGridViewButtonColumn btnDelete = new DataGridViewButtonColumn();
-                btnDelete.Name = "Xoá";
-                btnDelete.HeaderText = "Xoá";
-                btnDelete.Text = "Xoá";
-                btnDelete.UseColumnTextForButtonValue = true;
-                tblKhuyenMai.Columns.Add(btnDelete);
 
                 // Lấy dữ liệu từ cơ sở dữ liệu
                 DataTable dtItems = dtBase.DataReader("select MaKM, TenKM, TrangThai, SoTienKM,GiaToiThieu from KhuyenMai");
@@ -833,9 +795,6 @@ namespace CSharpCounterFinalProject
                     {
                         int rowIndex = tblKhuyenMai.Rows.Add(row["MaKM"], row["TenKM"], row["TrangThai"], row["SoTienKM"], row["GiaToiThieu"]);
 
-                        // Thêm sự kiện click cho các nút "Sửa" và "Xoá"
-                        tblKhuyenMai.Rows[rowIndex].Cells["Sửa"].Value = "Sửa";
-                        tblKhuyenMai.Rows[rowIndex].Cells["Xoá"].Value = "Xoá";
                     }
                 }
                 else
@@ -1114,6 +1073,27 @@ namespace CSharpCounterFinalProject
         private void tblItem_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void tblDuLieu_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if(e.RowIndex >=0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewRow row = tblDuLieu.Rows[e.RowIndex];
+                txtTenSP.Text = row.Cells["TenSanPham"].Value.ToString();
+                txtMaSP.Text = row.Cells["MaSanPham"].Value.ToString();
+                txtMaSP.Enabled = false;
+                txtHangSX.Text = row.Cells["HangSX"].Value.ToString();
+                txtPhanLoai.Text = row.Cells["PhanLoai"].Value.ToString();
+                txtTonKho.Text = row.Cells["TonKho"].Value.ToString();
+                txtGia.Text = row.Cells["GiaCa"].Value.ToString();
+                txtMoTa.Text = row.Cells["MoTa"].Value.ToString();
+                string imgPath = row.Cells["Anh"].Value.ToString();
+                picAnh.Image = Image.FromFile(System.Windows.Forms.Application.StartupPath + "\\AnhSP\\"+ imgPath);
+                picAnh.SizeMode = PictureBoxSizeMode.StretchImage;
+                btnXoaSP.Enabled = true;
+                btnSuaSP.Enabled = true;
+            }
         }
     }
 }
