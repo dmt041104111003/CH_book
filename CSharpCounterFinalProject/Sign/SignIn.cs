@@ -71,14 +71,14 @@ namespace CSharpCounterFinalProject.Sign
         private bool checkNguoiDung(string username, string password)
         {
             bool check = false;
-            string query = "select * from NguoiDung where MaNguoiDung = '" + username + "' and MatKhau ='" + password + "'";
+            string query = "select * from KhachHang where MaKH = '" + username + "' and MatKhau ='" + password + "'";
             DataTable dt = new DataTable();
             dt = dtBase.DataReader(query);
             if (dt.Rows.Count > 0)
             {
                 check = true;
-                Program.currentUser.TenUser = dt.Rows[0]["TenNguoiDung"].ToString();
-                Program.currentUser.MaUser = dt.Rows[0]["MaNguoiDung"].ToString();
+                Program.currentUser.TenUser = dt.Rows[0]["TenKhachHang"].ToString();
+                Program.currentUser.MaUser = dt.Rows[0]["MaKH"].ToString();
             }
             return check;
         }

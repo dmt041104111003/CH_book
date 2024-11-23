@@ -13,32 +13,22 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
 {
     public partial class HomeView : Form
     {
-        DataBaseProcess db = new DataBaseProcess();
+        DataBaseProcess db = new DataBaseProcess(); private bool isTheLoaiLoaded = false;
+        private TabPage currentTab; 
+
         public HomeView(string name)
         {
             InitializeComponent();
-            
-            //thiet lap 1 so thuoc tinh ban dau
             label1.Text += " " + name;
-            // Đặt số hàng và cột
             tableSanPhams.ColumnCount = 5;
             tableSanPhams.RowCount = 2;
 
-            // Thiết lập kích thước cho các cột (mỗi cột rộng 161)
-            for (int i = 0; i < tableSanPhams.ColumnCount; i++)
-            {
-                tableSanPhams.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 161));
-            }
+            for (int i = 0; i < tableSanPhams.ColumnCount; i++) tableSanPhams.ColumnStyles.Add(new ColumnStyle(SizeType.Absolute, 161));
+            
+            for (int i = 0; i < tableSanPhams.RowCount; i++) tableSanPhams.RowStyles.Add(new RowStyle(SizeType.Absolute, 231));
 
-            // Thiết lập kích thước cho các hàng (mỗi hàng cao 231)
-            for (int i = 0; i < tableSanPhams.RowCount; i++)
-            {
-                tableSanPhams.RowStyles.Add(new RowStyle(SizeType.Absolute, 231));
-            }
-
-            // Đặt kích thước tổng thể cho TableLayoutPanel
             tableSanPhams.Size = new Size(161 * tableSanPhams.ColumnCount, 231 * tableSanPhams.RowCount);
-
+            cbTheloai.DropDown += CbTheloai_DropDown;
         }
 
         private void groupBox2_Enter(object sender, EventArgs e)
@@ -50,53 +40,100 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         {
             this.Size = new Size(1000, 600);
             splitContainer2.SplitterDistance = 100;
-            //load san pham
+            tabControl1.SelectedTab = tabSanPham;
+            currentTab = tabSanPham;
             LoadCacSanPham();
+            LoadTheLoai();
             CenterToScreen();
-            cbTimKiemTheo.SelectedIndex = 0;
+
 
         }
+        private void CbTheloai_DropDown(object sender, EventArgs e)
+        {
+            if (!isTheLoaiLoaded)
+            {
+                LoadTheLoai();
+                isTheLoaiLoaded = true; 
+            }
+        }
 
+    
+        private void LoadTheLoai()
+        {
+            try
+            {
+                string query = "SELECT TenTheLoai FROM TheLoai"; 
+                DataTable dt = db.DataReader(query);
+
+           
+                cbTheloai.Items.Clear();
+
+       
+                foreach (DataRow row in dt.Rows)
+                {
+                    cbTheloai.Items.Add(row["TenTheLoai"].ToString());
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tải thể loại: " + ex.Message);
+            }
+        }
         private void LoadCacSanPham()
         {
-            List<string> list = new List<string>();
-            string query = "select  * from SanPham";
+            string query = @"
+SELECT TOP 5 
+    s.MaSach,
+    s.TenSach,
+    s.DonGia,
+    ISNULL(km.KM, 0) AS GiamGia,
+    CASE 
+        WHEN km.MaSach IS NOT NULL 
+        AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        THEN (s.DonGia - (s.DonGia * km.KM / 100))
+        ELSE s.DonGia 
+    END AS GiaMoi,
+    s.Anh,
+    CASE 
+        WHEN km.MaSach IS NOT NULL 
+        AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        THEN 1 
+        ELSE 0 
+    END AS DangGiamGia
+FROM Sach s 
+LEFT JOIN KhuyenMai km ON s.MaSach = km.MaSach";
+
             DataTable dt = db.DataReader(query);
             foreach (DataRow dr in dt.Rows)
             {
-               
                 string linksp = dr["Anh"].ToString();
-                string tensp = dr["TenSanPham"].ToString();
-                string gia = dr["GiaCa"].ToString();
-                string masp = dr["MaSanPham"].ToString();
-               
-                AddProductPanel(tableSanPhams, linksp, tensp, gia,masp);
-
+                string tensp = dr["TenSach"].ToString();
+                string gia = dr["GiaMoi"].ToString();
+                string masp = dr["MaSach"].ToString();
+                bool dangGiamGia = Convert.ToInt32(dr["DangGiamGia"]) == 1;
+                decimal giaGoc = Convert.ToDecimal(dr["DonGia"]);
+                AddProductPanel(tableSanPhams, linksp, tensp, gia, masp, dangGiamGia, giaGoc);
             }
-
-
         }
 
-        //them 1 hien thi sp
-        public void AddProductPanel(TableLayoutPanel tableSanPhams, string tenfileanh, string label1Text, string label2Text,string masp)
+     
+        public void AddProductPanel(TableLayoutPanel tableSanPhams, string tenfileanh, string label1Text,
+     string label2Text, string masp, bool dangGiamGia, decimal giaGoc)
         {
-            // Tạo TableLayoutPanel nhỏ với 2 cột và 3 hàng
             TableLayoutPanel innerTable = new TableLayoutPanel
             {
-                ColumnCount = 2, // Thêm cột thứ hai để chứa Label "Mua ngay"
+                ColumnCount = 2, 
                 RowCount = 3,
                 Size = new Size(161, 231)
             };
 
-            // Cột 1 chiếm 80%, cột 2 chỉ chiếm 20%
-            innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60)); // Cột 1 (Tên sản phẩm + ảnh + giá)
-            innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40)); // Cột 2 (Mua ngay)
+            innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 60)); 
+            innerTable.ColumnStyles.Add(new ColumnStyle(SizeType.Percent, 40)); 
 
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 161));  // Hàng 1
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));   // Hàng 2
-            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));   // Hàng 3
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 161));
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));   
+            innerTable.RowStyles.Add(new RowStyle(SizeType.Absolute, 35));  
 
-            // Tạo PictureBox và đặt ảnh vào hàng đầu tiên của innerTable
             PictureBox pictureBox = new PictureBox
             {
                 Dock = DockStyle.Fill,
@@ -104,22 +141,20 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 SizeMode = PictureBoxSizeMode.StretchImage
             };
 
-            // Kiểm tra và tải ảnh
             string imagePath = System.Windows.Forms.Application.StartupPath + "\\AnhSP\\" + tenfileanh;
 
             try
             {
                 pictureBox.Image = Image.FromFile(imagePath);
             }
-            catch
+            catch (Exception ex)
             {
-                MessageBox.Show("Không thể tải ảnh.");
+                MessageBox.Show($"Lỗi tải ảnh: {ex.Message}\nĐường dẫn: {imagePath}");
             }
-
             innerTable.Controls.Add(pictureBox, 0, 0);
-            innerTable.SetColumnSpan(pictureBox, 2); // Gộp cột cho PictureBox
+            innerTable.SetColumnSpan(pictureBox, 2); 
 
-            // Tạo và thêm Label thứ nhất vào hàng thứ hai của innerTable
+
             Label label1 = new Label
             {
                 Text = label1Text,
@@ -128,19 +163,28 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 BackColor = Color.LightYellow
             };
             innerTable.Controls.Add(label1, 0, 1);
-            innerTable.SetColumnSpan(label1, 2); // Gộp cột cho tên sản phẩm
+            innerTable.SetColumnSpan(label1, 2); 
 
-            // Tạo và thêm Label thứ hai vào hàng thứ ba của innerTable
-            Label label2 = new Label
+
+
+            Label label2 = new Label  
             {
-                Text = label2Text + " VND",
                 TextAlign = ContentAlignment.MiddleCenter,
                 Dock = DockStyle.Fill,
                 BackColor = Color.LightYellow
             };
+
+            if (dangGiamGia)
+            {
+                label2.Text = $"{label2Text} VND\n(Giá gốc: {giaGoc} VND)";
+            }
+            else
+            {
+                label2.Text = $"{giaGoc} VND";
+            }
+
             innerTable.Controls.Add(label2, 0, 2);
 
-            // Thêm Label "Mua ngay" vào hàng thứ ba, cột thứ hai
             Label buyNowLabel = new Label
             {
                 Text = "Mua ngay",
@@ -149,241 +193,28 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
                 ForeColor = Color.Red,
                 BackColor = Color.LightYellow
             };
-            buyNowLabel.Click += (sender, e) => BuyNowLabel_Click(sender, e, label1Text, label2Text, tenfileanh,masp);
+                 buyNowLabel.Click += (sender, e) => BuyNowLabel_Click(sender, e, label1Text, label2Text,tenfileanh,masp);
 
             innerTable.Controls.Add(buyNowLabel, 1, 2);
 
-            // Tạo hiệu ứng nhấp nháy
-            StartBlinking(buyNowLabel);
 
-            // Thêm innerTable vào tableSanPhams
+
             tableSanPhams.Controls.Add(innerTable);
         }
 
+
         private void BuyNowLabel_Click(object sender, EventArgs e, string label1Text, string label2Text, string anh,string masp)
         {
-            //show ra màn hình cụ thể để thêm sp vào giỏ hàng
+
             ChiTietSanPhamView chitietsp = new ChiTietSanPhamView(label1Text, label2Text,anh,masp);
             this.Close();
             chitietsp.ShowDialog();
 
         }
 
-        //hieu ung nhap nhay
-        private void StartBlinking(Label label)
-        {
-            Timer timer = new Timer
-            {
-                Interval = 500 // Thời gian đổi màu (500 ms = 0.5 giây)
-            };
+    
 
-            bool isRed = true;
 
-            timer.Tick += (s, e) =>
-            {
-                // Đổi màu mỗi lần Timer chạy
-                label.ForeColor = isRed ? Color.Red : Color.Transparent;
-                isRed = !isRed; // Đổi trạng thái màu
-            };
-
-            timer.Start();
-        }
-
-        private void btnTimKiem_Click(object sender, EventArgs e)
-        {
-            
-            switch (cbTimKiemTheo.SelectedIndex )
-            {
-                case 0:
-                    //tim kiem theo ten sp
-                    TimKiemTheoTenSp(txtTimKiem.Text);
-                    break;
-                case 1:
-                    //tim kiem theo phân loại
-                    TimKiemTheoPhanLoai(txtTimKiem.Text);
-                    break;
-                case 2:
-                    //tk theo hãng
-                    TimKiemTheoHangSX(txtTimKiem.Text);
-                    break;
-                case 3:
-                    //tk theo a-z
-                    txtTimKiem.Enabled = false;//hien ra tat ca theo thu tu tu a-z
-                    TimKiemRoiSapXepAZ();
-                    break;
-                default:
-                    MessageBox.Show("Lỗi lựa chọn tìm kiếm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-
-            }
-        }
-
-        private void TimKiemRoiSapXepAZ()
-        {
-            string query = "SELECT * FROM SanPham";
-            DataTable dataTable = db.DataReader(query);
-
-            // Kiểm tra nếu không có sản phẩm
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Không có sản phẩm nào trong cơ sở dữ liệu", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-
-            
-            DataView dataView = new DataView(dataTable);
-            dataView.Sort = "TenSanPham ASC"; // Sắp xếp theo tên sản phẩm tăng dần
-
-            tableSanPhams.Controls.Clear();
-
-            foreach (DataRow row in dataView.ToTable().Rows)
-            {
-                // Lấy thông tin sản phẩm từ row
-                string tenSanPham = row["TenSanPham"].ToString();
-                string giaSanPham = row["GiaCa"].ToString();
-                string tenFileAnh = row["Anh"].ToString();
-
-                string masp = row["MaSanPham"].ToString();
-
-                // Gọi hàm AddProductPanel để thêm sản phẩm vào tableSanPhams
-                AddProductPanel(tableSanPhams, tenFileAnh, tenSanPham, giaSanPham, masp);
-            }
-        }
-
-        private void TimKiemTheoHangSX(string text)
-        {
-            if (text == "")
-            {
-                MessageBox.Show("Không được để trống", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string query = "select * from SanPham where Hang COLLATE Latin1_General_CI_AI LIKE N'%" + text + "%';";
-            DataTable dataTable = db.DataReader(query);
-            //k tìm thấy
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                //tìm thấy thì xoá bảng cũ
-                tableSanPhams.Controls.Clear();
-                // thêm sp mới vào
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    // Lấy thông tin sản phẩm từ row
-                    string tenSanPham = row["TenSanPham"].ToString();
-                    string giaSanPham = row["GiaCa"].ToString();
-                    string tenFileAnh = row["Anh"].ToString();
-                    string masp = row["MaSanPham"].ToString();
-
-                    // Gọi hàm AddProductPanel để thêm sản phẩm vào tableSanPhams
-                    AddProductPanel(tableSanPhams, tenFileAnh, tenSanPham, giaSanPham, masp);
-                }
-                MessageBox.Show("Đã tìm thấy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void TimKiemTheoPhanLoai(string text)
-        {
-            if (text == "")
-            {
-                MessageBox.Show("Không được để trống tên phân loại", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string query = "select * from SanPham where PhanLoai COLLATE Latin1_General_CI_AI LIKE N'%" + text + "%';";
-            DataTable dataTable = db.DataReader(query);
-            //k tìm thấy
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                //tìm thấy thì xoá bảng cũ
-                tableSanPhams.Controls.Clear();
-                // thêm sp mới vào
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    // Lấy thông tin sản phẩm từ row
-                    string tenSanPham = row["TenSanPham"].ToString();
-                    string giaSanPham = row["GiaCa"].ToString();
-                    string tenFileAnh = row["Anh"].ToString();
-                    string masp = row["MaSanPham"].ToString();
-
-                    // Gọi hàm AddProductPanel để thêm sản phẩm vào tableSanPhams
-                    AddProductPanel(tableSanPhams, tenFileAnh, tenSanPham, giaSanPham, masp);
-                }
-                MessageBox.Show("Đã tìm thấy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-        }
-
-        private void TimKiemTheoTenSp(string text)
-        {
-            if (text == "")
-            {
-                MessageBox.Show("Không được để trống", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
-            }
-            string query = "select * from SanPham where TenSanPham COLLATE Latin1_General_CI_AI LIKE N'%"+text+"%';";
-            DataTable dataTable = db.DataReader(query);
-            //k tìm thấy
-            if (dataTable.Rows.Count == 0)
-            {
-                MessageBox.Show("Không tìm thấy sản phẩm nào", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                return;
-            }
-            else
-            {
-                //tìm thấy thì xoá bảng cũ
-                tableSanPhams.Controls.Clear();
-                // thêm sp mới vào
-
-                foreach (DataRow row in dataTable.Rows)
-                {
-                    // Lấy thông tin sản phẩm từ row
-                    string tenSanPham = row["TenSanPham"].ToString();
-                    string giaSanPham = row["GiaCa"].ToString();
-                    string tenFileAnh = row["Anh"].ToString();
-                    string masp = row["MaSanPham"].ToString();
-
-                    // Gọi hàm AddProductPanel để thêm sản phẩm vào tableSanPhams
-                    AddProductPanel(tableSanPhams, tenFileAnh, tenSanPham, giaSanPham, masp);
-                }
-                MessageBox.Show("Đã tìm thấy", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
-        }
-
-        private void cbTimKiemTheo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (cbTimKiemTheo.SelectedIndex)
-            {
-                case 0:
-                    labelNhapTK.Text = "Nhập tên sản phẩm";
-                    break;
-                case 1:
-                    //tim kiem theo phân loại
-                    labelNhapTK.Text = "Nhập phân loại";
-                    break;
-                case 2:
-                    //tk theo hãng
-                    labelNhapTK.Text = "Nhập hãng cần tìm";
-                    break;
-                case 3:
-                    //tk theo a-z
-                    txtTimKiem.Enabled = false;//hien ra tat ca theo thu tu tu a-z
-                    break;
-                default:
-                    MessageBox.Show("Lỗi lựa chọn tìm kiếm", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    break;
-
-            }
-        }
 
         private void btnGioHang_Click(object sender, EventArgs e)
         {
@@ -395,5 +226,303 @@ namespace CSharpCounterFinalProject.ViewNguoiMua
         {
             this.Close();
         }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            LoadCacSanPham();
+        }
+
+        private void tabSanPham_Click(object sender, EventArgs e)
+        {
+            tabSanPham.AutoScroll = true;
+            this.AutoScroll = true;
+
+        }
+
+
+
+
+        //private void btTimkiem_Click(object sender, EventArgs e)
+        //{
+        //    string tenSach = txtTensanpham.Text.Trim();
+        //    string tacGia = txtTentacgia.Text.Trim();
+        //    string theLoai = cbTheloai.SelectedItem?.ToString();
+        //    string giaTu = txtGiatu.Text.Trim();
+        //    string giaDen = txtGiaden.Text.Trim();
+
+        //    StringBuilder queryBuilder = new StringBuilder(@"
+        //SELECT TOP 5 
+        //    s.MaSach,
+        //    s.TenSach,
+        //    s.DonGia,
+        //    ISNULL(km.KM, 0) AS GiamGia,
+        //    CASE 
+        //        WHEN km.MaSach IS NOT NULL 
+        //        AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        //        THEN (s.DonGia - (s.DonGia * km.KM / 100))
+        //        ELSE s.DonGia 
+        //    END AS GiaMoi,
+        //    s.Anh,
+        //    CASE 
+        //        WHEN km.MaSach IS NOT NULL 
+        //        AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        //        THEN 1 
+        //        ELSE 0 
+        //    END AS DangGiamGia
+        //FROM Sach s 
+        //LEFT JOIN KhuyenMai km ON s.MaSach = km.MaSach 
+        //WHERE 1=1");
+
+
+        //        if (!string.IsNullOrEmpty(tenSach))
+        //        queryBuilder.Append($" AND s.TenSach LIKE N'%{tenSach}%'");
+
+        //    if (!string.IsNullOrEmpty(tacGia))
+        //        queryBuilder.Append($" AND s.TacGia LIKE N'%{tacGia}%'");
+
+        //    if (!string.IsNullOrEmpty(theLoai))
+        //        queryBuilder.Append($" AND s.MaTheLoai IN (SELECT MaTheLoai FROM TheLoai WHERE TenTheLoai = N'{theLoai}')");
+
+
+        //        if (!string.IsNullOrEmpty(giaTu) && decimal.TryParse(giaTu, out decimal giaMin))
+        //        queryBuilder.Append(@" AND (
+        //        CASE 
+        //            WHEN km.MaSach IS NOT NULL 
+        //            AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        //            THEN (s.DonGia - (s.DonGia * km.KM / 100))
+        //            ELSE s.DonGia 
+        //        END) >= " + giaMin);
+
+        //    if (!string.IsNullOrEmpty(giaDen) && decimal.TryParse(giaDen, out decimal giaMax))
+        //        queryBuilder.Append(@" AND (
+        //        CASE 
+        //            WHEN km.MaSach IS NOT NULL 
+        //            AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+        //            THEN (s.DonGia - (s.DonGia * km.KM / 100))
+        //            ELSE s.DonGia 
+        //        END) <= " + giaMax);
+
+
+        //        LoadKetQuaTimKiem(queryBuilder.ToString());
+        //}
+
+        private void btTimkiem_Click(object sender, EventArgs e)
+        {
+            string tenSach = txtTensanpham.Text.Trim();
+            string tacGia = txtTentacgia.Text.Trim();
+            string theLoai = cbTheloai.SelectedItem?.ToString();
+            string giaTu = txtGiatu.Text.Trim();
+            string giaDen = txtGiaden.Text.Trim();
+
+            StringBuilder queryBuilder = new StringBuilder();
+
+            if (currentTab == tabSanPham)
+            {
+                queryBuilder.Append(@"
+    SELECT TOP 5 
+        s.MaSach,
+        s.TenSach,
+        s.DonGia,
+        ISNULL(km.KM, 0) AS GiamGia,
+        CASE 
+            WHEN km.MaSach IS NOT NULL 
+            AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+            THEN (s.DonGia - (s.DonGia * km.KM / 100))
+            ELSE s.DonGia 
+        END AS GiaMoi,
+        s.Anh,
+        CASE 
+            WHEN km.MaSach IS NOT NULL 
+            AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+            THEN 1 
+            ELSE 0 
+        END AS DangGiamGia
+    FROM Sach s 
+    LEFT JOIN KhuyenMai km ON s.MaSach = km.MaSach 
+    WHERE 1=1");
+
+                if (!string.IsNullOrEmpty(tenSach))
+                    queryBuilder.Append($" AND s.TenSach LIKE N'%{tenSach}%'");
+
+                if (!string.IsNullOrEmpty(tacGia))
+                    queryBuilder.Append($" AND s.TacGia LIKE N'%{tacGia}%'");
+
+                if (!string.IsNullOrEmpty(theLoai))
+                    queryBuilder.Append($" AND s.MaTheLoai IN (SELECT MaTheLoai FROM TheLoai WHERE TenTheLoai = N'{theLoai}')");
+
+                if (!string.IsNullOrEmpty(giaTu) && decimal.TryParse(giaTu, out decimal giaMin))
+                    queryBuilder.Append(@" AND (
+            CASE 
+                WHEN km.MaSach IS NOT NULL 
+                AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+                THEN (s.DonGia - (s.DonGia * km.KM / 100))
+                ELSE s.DonGia 
+            END) >= " + giaMin);
+
+                if (!string.IsNullOrEmpty(giaDen) && decimal.TryParse(giaDen, out decimal giaMax))
+                    queryBuilder.Append(@" AND (
+            CASE 
+                WHEN km.MaSach IS NOT NULL 
+                AND GETDATE() BETWEEN km.ThoigianBatDau AND km.ThoiGianKetThuc 
+                THEN (s.DonGia - (s.DonGia * km.KM / 100))
+                ELSE s.DonGia 
+            END) <= " + giaMax);
+
+            }
+            else if (currentTab == tabSachmienphi)
+            {
+                queryBuilder.Append(@"
+            SELECT 
+                s.MaSach,
+                s.TenSach,
+                s.DonGia,
+                s.Anh
+            FROM Sach s
+            WHERE s.DonGia = 0");
+
+                if (!string.IsNullOrEmpty(tenSach))
+                    queryBuilder.Append($" AND s.TenSach LIKE N'%{tenSach}%'");
+
+                if (!string.IsNullOrEmpty(tacGia))
+                    queryBuilder.Append($" AND s.TacGia LIKE N'%{tacGia}%'");
+
+                if (!string.IsNullOrEmpty(theLoai))
+                    queryBuilder.Append($" AND s.MaTheLoai IN (SELECT MaTheLoai FROM TheLoai WHERE TenTheLoai = N'{theLoai}')");
+            }
+           
+
+            if (currentTab == tabSanPham)
+            {
+                tableSanPhams.Controls.Clear();
+                LoadKetQuaTimKiem(queryBuilder.ToString(), tableSanPhams);
+            }
+            else if (currentTab == tabSachmienphi)
+            {
+                tableSanPhamsSachmienphi.Controls.Clear();
+                LoadKetQuaTimKiem(queryBuilder.ToString(), tableSanPhamsSachmienphi);
+            }
+        
+        }
+
+
+
+        private void LoadKetQuaTimKiem(string query, TableLayoutPanel tableToLoad)
+        {
+            try
+            {
+                DataTable dt = db.DataReader(query);
+
+      
+                tableToLoad.Controls.Clear();
+
+                // Thêm các sản phẩm vào bảng
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string linksp = dr["Anh"].ToString(); 
+                    string tensp = dr["TenSach"].ToString(); 
+                    string masp = dr["MaSach"].ToString(); 
+                    string gia = string.Empty; // Giá hiển thị
+
+                    if (currentTab == tabSanPham)
+                    {
+                        // Tab Sản phẩm: Hiển thị giá đã giảm (GiaMoi) và trạng thái giảm giá (DangGiamGia)
+                        gia = dr["GiaMoi"].ToString();
+                        bool dangGiamGia = Convert.ToInt32(dr["DangGiamGia"]) == 1; // Kiểm tra có giảm giá không
+                        decimal giaGoc = Convert.ToDecimal(dr["DonGia"]);
+                        AddProductPanel(tableToLoad, linksp, tensp, gia, masp, dangGiamGia, giaGoc);
+                    }
+                    else if (currentTab == tabSachmienphi)
+                    {
+                        // Tab Sách Miễn Phí: Hiển thị giá gốc (DonGia)
+                        gia = dr["DonGia"].ToString(); 
+                        decimal giaGoc = Convert.ToDecimal(dr["DonGia"]);
+                        AddProductPanel(tableToLoad, linksp, tensp, gia, masp, false, giaGoc); // Không có giảm giá
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải kết quả tìm kiếm: {ex.Message}");
+            }
+        }
+
+
+        private void tabSachmienphi_Click(object sender, EventArgs e)
+        {
+        
+        }
+   
+        private void tabControl1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            currentTab = tabControl1.SelectedTab;
+            if (currentTab == tabSachmienphi)
+            {
+                txtGiatu.Enabled = false;
+                txtGiaden.Enabled = false;
+         
+            }
+            else if (currentTab == tabSanPham)
+            {
+                txtGiatu.Enabled = true;
+                txtGiaden.Enabled = true;
+            }
+
+          
+            if (currentTab == tabSanPham)
+            {
+                tableSanPhams.Controls.Clear(); 
+                LoadCacSanPham(); 
+            }
+            else if (currentTab == tabSachmienphi)
+            {
+                tableSanPhamsSachmienphi.Controls.Clear(); 
+                LoadSachMienPhi();
+            }
+            //else if (currentTab == tabMoiphathanh)
+            //{
+            //    tableSanPhamsPhathanh.Controls.Clear();
+            //    LoadSachMoiPhatHanh(); 
+            //}
+            //else if (currentTab == tabSapphathanh)
+            //{
+            //    tableSanPhamsSapphathanh.Controls.Clear(); 
+            //    LoadSachSapPhatHanh(); 
+            //}
+        }
+
+        private void LoadSachMienPhi()
+        {
+            try
+            {
+      
+                string query = @"
+        SELECT 
+            s.MaSach,
+            s.TenSach,
+            s.DonGia,
+            s.Anh
+        FROM Sach s
+        WHERE s.DonGia = 0";
+
+                DataTable dt = db.DataReader(query);
+
+          
+
+                // Thêm các sản phẩm miễn phí vào bảng
+                foreach (DataRow dr in dt.Rows)
+                {
+                    string linksp = dr["Anh"].ToString();
+                    string tensp = dr["TenSach"].ToString();
+                    string masp = dr["MaSach"].ToString();
+                    decimal giaGoc = Convert.ToDecimal(dr["DonGia"]);
+                    AddProductPanel(tableSanPhamsSachmienphi, linksp, tensp, "0", masp, false, giaGoc);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Lỗi khi tải sách miễn phí: {ex.Message}");
+            }
+        }
+
     }
 }
